@@ -1,1 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#09000d" />
+<title>Marvalous App V2</title>
 
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ST39WS2DBB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-ST39WS2DBB');
+</script>
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+window.OneSignalDeferred = window.OneSignalDeferred || [];
+OneSignalDeferred.push(async function(OneSignal) {
+  await OneSignal.init({
+    appId: "53bd206e-20f6-417e-8d73-ce10ee3b1b3a",
+    notifyButton: { enable: true },
+    promptOptions: { slidedown: { enabled: true, autoPrompt: true } }
+  });
+});
+</script>
+</head>
+
+<body>
+
+<div class="splash" id="splash">
+  <img src="logo.png" alt="Marvalous">
+  <div>MARVALOUS</div>
+</div>
+
+<div class="app-bg"></div>
+
+<main class="app">
+
+  <header class="app-header">
+    <div class="header-left">
+      <img src="logo.png" class="header-logo" alt="Marvalous">
+      <div>
+        <div class="eyebrow">MARVALOUS COMPETITIONS</div>
+        <h1>Welcome Back 👋</h1>
+      </div>
+    </div>
+
+    <button class="icon-btn" onclick="openTab('account')" aria-label="Notifications">
+      🔔
+      <span class="dot"></span>
+    </button>
+  </header>
+
+  <section class="ticker">
+    <div class="ticker-track">
+      <span id="tickerOne">🔥 LIVE DRAWS • 🧊 ICE BREAK • 🏆 WEEKLY LEAGUE • 💜 WIN THE MARVALOUS WAY</span>
+      <span id="tickerTwo">🔥 LIVE DRAWS • 🧊 ICE BREAK • 🏆 WEEKLY LEAGUE • 💜 WIN THE MARVALOUS WAY</span>
+    </div>
+  </section>
+    <section id="home" class="screen active">
+
+    <section class="feature-card">
+      <div class="feature-badge">🔥 Featured Competition</div>
+      <h2 id="featuredTitle">Big Prize Drop</h2>
+      <p id="featuredSub">10p tickets • Instant wins • Live draw Sunday</p>
+
+      <div class="feature-prize">
+        <div class="prize-glow"></div>
+        <div class="prize-text">MARVALOUS<br>MAIN EVENT</div>
+      </div>
+
+      <div class="feature-row">
+        <div>
+          <small>Ticket sales close</small>
+          <strong id="closeTime">Sunday 6:00pm</strong>
+        </div>
+        <a class="gold-btn" href="https://www.marvalouscompetitions.co.uk" target="_blank">Enter Now</a>
+      </div>
+    </section>
+
+    <section class="live-centre" id="liveCentre">
+      <div class="live-top">
+        <div>
+          <div class="section-label">Live Draw Centre</div>
+          <h2 id="liveTitle">Next Live Draw</h2>
+        </div>
+        <div class="live-pill" id="livePill">Upcoming</div>
+      </div>
+
+      <p id="liveMessage">Ticket sales close at 6pm. Live draw starts on Facebook at 7pm.</p>
+
+      <div class="countdown" id="countdown">
+        <div><b id="days">0</b><span>Days</span></div>
+        <div><b id="hours">0</b><span>Hours</span></div>
+        <div><b id="mins">0</b><span>Mins</span></div>
+        <div><b id="secs">0</b><span>Secs</span></div>
+      </div>
+
+      <a id="liveAction" class="purple-btn" href="https://www.marvalouscompetitions.co.uk" target="_blank">
+        View Competitions
+      </a>
+    </section>
+          <section class="quick-grid">
+      <a class="quick-card ice" href="scratch.html">
+        <span>🧊</span>
+        <h3>Marv's Ice Break</h3>
+        <p>Play today's free game.</p>
+      </a>
+
+      <a class="quick-card win" href="https://www.marvalouscompetitions.co.uk" target="_blank">
+        <span>💰</span>
+        <h3>Instant Wins</h3>
+        <p>Find the prizes hiding today.</p>
+      </a>
+
+      <a class="quick-card league" href="https://marvalouscompetitions.co.uk/i/the-marvalous-league" target="_blank">
+        <span>🏆</span>
+        <h3>League</h3>
+        <p>Climb the leaderboard.</p>
+      </a>
+
+      <a class="quick-card social" href="https://www.facebook.com/share/1BVvdYFSW6/" target="_blank">
+        <span>📺</span>
+        <h3>Facebook Live</h3>
+        <p>Watch draws and updates.</p>
+      </a>
+    </section>
+
+    <section class="section-head">
+      <div>
+        <div class="section-label">Latest Winners</div>
+        <h2>Winning the Marvalous way</h2>
+      </div>
+    </section>
+
+    <section class="winner-strip">
+      <div class="winner-card">
+        <b>🎉 Recent Winner</b>
+        <span>Cash prize claimed</span>
+      </div>
+      <div class="winner-card">
+        <b>🏆 League Player</b>
+        <span>Points added today</span>
+      </div>
+      <div class="winner-card">
+        <b>🧊 Ice Break</b>
+        <span>Daily rewards unlocked</span>
+      </div>
+    </section>
+
+    </section>
+    <section id="competitions" class="screen">
+
+    <div class="page-title">
+      <h2>Competitions</h2>
+      <p>Browse all live Marvalous competitions.</p>
+    </div>
+
+    <iframe
+      src="https://www.marvalouscompetitions.co.uk"
+      class="web-frame"
+      loading="lazy">
+    </iframe>
+
+  </section>
+
+  <section id="league" class="screen">
+
+    <div class="page-title">
+      <h2>League</h2>
+      <p>See the latest leaderboard.</p>
+    </div>
+
+    <iframe
+      src="https://marvalouscompetitions.co.uk/i/the-marvalous-league"
+      class="web-frame"
+      loading="lazy">
+    </iframe>
+
+  </section>
+
+  <section id="account" class="screen">
+
+    <div class="page-title">
+      <h2>My Marvalous</h2>
+      <p>Your app settings and shortcuts.</p>
+    </div>
+
+    <div class="account-grid">
+
+      <a class="account-card" href="#" onclick="turnOnNotifications()">
+        🔔
+        <h3>Notifications</h3>
+      </a>
+
+      <a class="account-card" href="#" id="installButton">
+        📲
+        <h3>Install App</h3>
+      </a>
+
+      <a class="account-card" href="scratch.html">
+        🧊
+        <h3>Ice Break</h3>
+      </a>
+
+      <a class="account-card"
+         href="https://www.facebook.com/share/1BVvdYFSW6/"
+         target="_blank">
+        📘
+        <h3>Facebook</h3>
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+<nav class="bottom-nav">
+  <button class="nav-item active" onclick="openTab('home', this)">
+    <span>🏠</span>
+    Home
+  </button>
+
+  <button class="nav-item" onclick="openTab('competitions', this)">
+    <span>🎟️</span>
+    Comps
+  </button>
+
+  <a class="nav-item" href="scratch.html">
+    <span>🧊</span>
+    Ice
+  </a>
+
+  <button class="nav-item" onclick="openTab('league', this)">
+    <span>🏆</span>
+    League
+  </button>
+
+  <button class="nav-item" onclick="openTab('account', this)">
+    <span>👤</span>
+    Account
+  </button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>
