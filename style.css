@@ -776,3 +776,40 @@ button {
     height: 48px !important;
     border-radius: 50% !important;
   }
+/* CENTRE BUY TICKETS LOGO BUTTON */
+.centre-action{
+  width:86px !important;
+  height:86px !important;
+  margin:0 auto !important;
+  transform:translateY(-28px) !important;
+  border-radius:50% !important;
+  background:#130018 !important;
+  border:5px solid #ffd54a !important;
+  box-shadow:
+    0 0 0 8px rgba(123,24,255,.35),
+    0 0 28px rgba(255,211,90,.65),
+    0 15px 30px rgba(0,0,0,.5) !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  position:relative !important;
+  overflow:hidden !important;
+}
+
+.centre-logo{
+  width:58px !important;
+  height:58px !important;
+  object-fit:contain !important;
+  border-radius:50% !important;
+  display:block !important;
+}
+
+.centre-action b{
+  position:absolute !important;
+  bottom:-24px !important;
+  left:50% !important;
+  transform:translateX(-50%) !important;
+  font-size:10px !important;
+  color:#fff !important;
+  white-space:nowrap !important;
+}
