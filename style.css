@@ -777,3 +777,22 @@ button {
     border-radius: 50% !important;
   }
 }
+/* FIX HERO TROPHY SIZE */
+.hero-art{
+  height: 140px !important;
+  overflow: hidden !important;
+  border-radius: 22px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.trophy-img,
+.hero-trophy{
+  width: 165px !important;
+  height: 140px !important;
+  object-fit: cover !important;
+  object-position: center 38% !important;
+  display: block !important;
+  border-radius: 18px !important;
+}
