@@ -796,3 +796,30 @@ button {
   display: block !important;
   border-radius: 18px !important;
 }
+/* FIX BOTTOM NAV CUT OFF */
+.bottom-nav{
+  height: 86px !important;
+  padding: 6px 12px 10px !important;
+  overflow: visible !important;
+}
+
+.bottom-nav a{
+  min-height: 56px !important;
+  font-size: 10px !important;
+}
+
+.centre-action{
+  width: 74px !important;
+  height: 74px !important;
+  transform: translateY(-18px) !important;
+}
+
+.centre-action b{
+  bottom: -20px !important;
+  font-size: 10px !important;
+}
+
+.centre-action .nav-icon{
+  width: 30px !important;
+  height: 30px !important;
+}
