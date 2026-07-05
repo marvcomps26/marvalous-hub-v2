@@ -654,4 +654,84 @@ button {
     height: 76px;
   }
 }
+/* FINAL MOCK MATCH PASS */
 
+@media (max-width: 430px) {
+  .app-shell{
+    padding: 12px 18px 108px !important;
+  }
+
+  .app-header{
+    align-items: center !important;
+    margin-bottom: 18px !important;
+  }
+
+  .brand-logo{
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  .brand-block h1{
+    font-size: 17px !important;
+    line-height: 1.12 !important;
+  }
+
+  .brand-block p{
+    font-size: 12px !important;
+  }
+
+  .icon-button{
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+  }
+
+  .hero-card{
+    grid-template-columns: 42% 1fr !important;
+    min-height: 168px !important;
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .hero-art{
+    height: 136px !important;
+  }
+
+  .trophy-cup{
+    transform: scale(1) !important;
+  }
+
+  .hero-copy h2{
+    font-size: 22px !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-copy p{
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+
+  .gold-button{
+    width: 100% !important;
+    min-height: 42px !important;
+    font-size: 13px !important;
+  }
+
+  .stats-strip{
+    margin-top: 14px !important;
+    margin-bottom: 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .stat-card{
+    min-height: 82px !important;
+  }
+
+  .quick-card{
+    min-height: 132px !important;
+  }
+
+  .bottom-nav{
+    height: 80px !important;
+  }
+}
