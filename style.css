@@ -1,1 +1,61 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:white;background:#050006;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 50% -10%,rgba(255,215,106,.22),transparent 28%),radial-gradient(circle at 0% 12%,rgba(123,44,255,.45),transparent 36%),radial-gradient(circle at 100% 28%,rgba(255,47,214,.22),transparent 34%),linear-gradient(180deg,#21002e 0%,#09000d 58%,#000 100%)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.24;background-image:radial-gradient(circle,rgba(255,215,106,.8) 0 1px,transparent 2px),radial-gradient(circle,rgba(255,255,255,.48) 0 1px,transparent 2px);background-size:52px 52px,88px 88px;background-position:0 0,24px 30px}
 
+#splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(circle,rgba(123,44,255,.45),#050006 62%);animation:splashOut 1.4s ease forwards}
+#splash img{width:118px;filter:drop-shadow(0 0 28px rgba(180,120,255,.9))}
+#splash p{color:#ffd76a;font-weight:1000;letter-spacing:5px}
+@keyframes splashOut{0%,70%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+
+.ticker{height:38px;overflow:hidden;background:linear-gradient(90deg,#5d1bb0,#2b0046);border-bottom:1px solid rgba(255,215,106,.25)}
+.ticker div{display:flex;width:max-content;animation:ticker 16s linear infinite}
+.ticker span{padding:11px 28px;color:#ffd76a;font-size:12px;font-weight:1000;white-space:nowrap}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.app{width:min(520px,100%);margin:0 auto;padding:18px 14px 110px}
+.top{display:flex;align-items:center;gap:12px;padding:4px 0 18px}
+.logo{width:62px;height:62px;border-radius:50%;object-fit:contain;background:rgba(123,44,255,.18);border:3px solid rgba(255,215,106,.55);box-shadow:0 0 22px rgba(123,44,255,.65)}
+.welcome{flex:1}
+.welcome h1{margin:0;font-size:26px;line-height:1.02;text-shadow:0 0 18px rgba(255,47,214,.55)}
+.welcome p{margin:6px 0 0;color:rgba(255,255,255,.68);font-size:13px}
+.menu-btn{width:48px;height:48px;border:0;border-radius:18px;color:white;font-size:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+
+.hero{position:relative;overflow:hidden;display:flex;gap:18px;align-items:center;min-height:230px;padding:20px;border-radius:34px;background:radial-gradient(circle at 80% 10%,rgba(255,215,106,.34),transparent 28%),linear-gradient(145deg,#3b005e,#09000d 70%);border:1px solid rgba(255,215,106,.34);box-shadow:0 18px 45px rgba(0,0,0,.48),0 0 32px rgba(123,44,255,.35)}
+.hero-img{width:120px;height:120px;min-width:120px;border-radius:32px;display:grid;place-items:center;font-size:58px;background:linear-gradient(145deg,rgba(255,215,106,.24),rgba(255,255,255,.06));border:1px solid rgba(255,215,106,.25);box-shadow:inset 0 0 22px rgba(255,255,255,.05),0 0 24px rgba(255,215,106,.18)}
+.hero h2{margin:0;font-size:30px;line-height:.95;text-transform:uppercase}
+.hero p{margin:10px 0 16px;color:rgba(255,255,255,.72);font-size:14px;line-height:1.35}
+.gold-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:999px;color:#220018;text-decoration:none;font-weight:1000;background:linear-gradient(135deg,#fff4ad,#ffd76a,#d7981f);box-shadow:0 0 24px rgba(255,215,106,.38)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0}
+.stats div{min-height:94px;padding:12px 6px;border-radius:24px;text-align:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.stats span{display:block;color:#ffd76a;font-size:25px}
+.stats b{display:block;margin-top:6px;font-size:15px}
+.stats p{margin:3px 0 0;color:rgba(255,255,255,.58);font-size:10px;text-transform:uppercase}
+
+.section-title{margin:24px 2px 14px;font-size:24px}
+.quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.quick-card{position:relative;overflow:hidden;min-height:160px;padding:17px;border-radius:30px;text-decoration:none;color:white;background:linear-gradient(145deg,rgba(40,5,72,.92),rgba(10,0,18,.96));border:1px solid rgba(180,120,255,.28);box-shadow:0 14px 34px rgba(0,0,0,.38)}
+.quick-card:before{content:"";position:absolute;width:120px;height:120px;right:-42px;top:-42px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.16),transparent 70%)}
+.quick-card span{font-size:34px;color:#ffd76a}
+.quick-card h3{margin:16px 0 6px;font-size:18px;line-height:1.05}
+.quick-card p{margin:0;color:rgba(255,255,255,.66);font-size:12px;line-height:1.3}
+.quick-card em{position:absolute;right:16px;bottom:14px;font-style:normal;color:#ffd76a;font-size:24px}
+.quick-card.gold{background:linear-gradient(145deg,#5d3a00,#130018)}
+.quick-card.pink{background:linear-gradient(145deg,#6b005d,#130018)}
+
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:999;width:100%;height:84px;padding:8px 14px 10px;display:grid;grid-template-columns:1fr 1fr 86px 1fr 1fr;align-items:end;background:linear-gradient(180deg,#4b007a,#27003f);border-top:1px solid rgba(255,255,255,.18);box-shadow:0 -10px 30px rgba(0,0,0,.55)}
+.bottom-nav a{min-height:58px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;text-decoration:none;color:rgba(255,255,255,.72);font-size:10px;font-weight:900}
+.bottom-nav a span{font-size:25px;line-height:1}
+.bottom-nav a.active{color:#ffd76a;background:rgba(255,255,255,.09);border-radius:18px}
+.bottom-nav .centre{width:76px;height:76px;border-radius:50%;margin:0 auto;transform:translateY(-24px);background:linear-gradient(180deg,#ffd76a,#f5a800);border:5px solid #6e159e;color:#3b005e;box-shadow:0 8px 22px rgba(0,0,0,.48)}
+.bottom-nav .centre span{font-size:30px}
+.bottom-nav .centre b{position:absolute;bottom:-27px;color:#fff;font-size:10px;white-space:nowrap}
+
+@media(max-width:430px){
+.hero{min-height:220px}
+.hero-img{width:95px;height:95px;min-width:95px;font-size:45px}
+.hero h2{font-size:25px}
+.quick-card{min-height:145px}
+.welcome h1{font-size:23px}
+          }
