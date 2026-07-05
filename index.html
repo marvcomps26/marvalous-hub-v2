@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Marvalous App</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<div id="splash">
+  <img src="logo.png" alt="Marvalous">
+  <p>MARVALOUS</p>
+</div>
+
+<iframe id="appFrame" src="https://www.marvalouscompetitions.co.uk"></iframe>
+
+<nav class="app-nav">
+  <button onclick="loadPage('https://www.marvalouscompetitions.co.uk')">Home</button>
+  <button onclick="loadPage('https://www.marvalouscompetitions.co.uk')">Competitions</button>
+  <button onclick="window.location.href='scratch.html'">Ice Break</button>
+  <button onclick="loadPage('https://www.marvalouscompetitions.co.uk/winners')">Winners</button>
+  <button onclick="loadPage('https://marvalouscompetitions.co.uk/i/the-marvalous-league')">League</button>
+</nav>
+
+<script src="app.js"></script>
+</body>
+</html>
