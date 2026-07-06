@@ -1,1 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050006">
+<title>Marvalous Winners</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
 
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+:root{
+  --bg:#050006;
+  --purple:#7b18ff;
+  --purple2:#b638ff;
+  --gold:#ffd35a;
+  --pink:#ff35c8;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(123,24,255,.36),transparent 34%),
+    radial-gradient(circle at 100% 20%,rgba(255,53,200,.16),transparent 34%),
+    linear-gradient(180deg,#09000f 0%,#050006 60%,#020003 100%);
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.13;
+  background-image:
+    radial-gradient(circle,rgba(255,211,90,.8) 0 1px,transparent 2px),
+    radial-gradient(circle,rgba(255,255,255,.45) 0 1px,transparent 2px);
+  background-size:54px 54px,92px 92px;
+  z-index:-1;
+}
+
+.page{
+  width:min(520px,100%);
+  margin:0 auto;
+  padding:20px 16px 130px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:20px;
+}
+
+.header img{
+  width:66px;
+  height:66px;
+  border-radius:50%;
+  object-fit:contain;
+  box-shadow:0 0 26px rgba(123,24,255,.65);
+}
+
+.header h1{
+  margin:0;
+  font-size:28px;
+  line-height:1;
+}
+
+.header p{
+  margin:6px 0 0;
+  color:rgba(255,255,255,.65);
+  font-size:13px;
+}
+
+.hero{
+  position:relative;
+  border-radius:30px;
+  padding:22px;
+  overflow:hidden;
+  background:
+    linear-gradient(145deg,rgba(55,0,85,.9),rgba(8,0,14,.96));
+  border:1px solid rgba(180,56,255,.35);
+  box-shadow:0 18px 45px rgba(0,0,0,.55);
+  margin-bottom:22px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  right:-70px;
+  top:-70px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,211,90,.30),transparent 68%);
+}
+
+.hero-badge{
+  display:inline-flex;
+  padding:7px 13px;
+  border-radius:999px;
+  background:rgba(255,211,90,.12);
+  border:1px solid rgba(255,211,90,.28);
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+
+.hero h2{
+  margin:14px 0 8px;
+  font-size:34px;
+  line-height:.95;
+}
+
+.hero p{
+  margin:0;
+  max-width:310px;
+  color:rgba(255,255,255,.72);
+  font-size:14px;
+  line-height:1.35;
+}
+
+.feature-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:22px 4px 12px;
+}
+
+.feature-title h2{
+  margin:0;
+  font-size:22px;
+}
+
+.feature-title span{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:900;
+}
+
+.winner-marquee{
+  overflow:hidden;
+  margin-bottom:24px;
+}
+
+.winner-track{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:winnerScroll 45s linear infinite;
+}
+
+@keyframes winnerScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+.winner-frame{
+  width:185px;
+  flex:0 0 185px;
+  border-radius:24px;
+  padding:7px;
+  background:linear-gradient(145deg,rgba(255,211,90,.9),rgba(123,24,255,.85),rgba(255,53,200,.65));
+  box-shadow:0 14px 34px rgba(0,0,0,.45),0 0 22px rgba(123,24,255,.35);
+}
+
+.winner-inner{
+  border-radius:19px;
+  overflow:hidden;
+  background:#100018;
+  border:1px solid rgba(255,255,255,.14);
+}
+
+.winner-inner img{
+  width:100%;
+  height:250px;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+
+.winner-label{
+  padding:10px;
+  font-size:12px;
+  font-weight:900;
+  color:#fff;
+  background:rgba(0,0,0,.45);
+}
+
+.grid-title{
+  margin:0 0 12px;
+  font-size:22px;
+}
+
+.winners-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.grid-card{
+  border-radius:24px;
+  padding:6px;
+  background:linear-gradient(145deg,rgba(123,24,255,.65),rgba(255,211,90,.55));
+  box-shadow:0 12px 28px rgba(0,0,0,.38);
+}
+
+.grid-card-inner{
+  border-radius:19px;
+  overflow:hidden;
+  background:#100018;
+}
+
+.grid-card img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+  display:block;
+}
+
+.grid-card p{
+  margin:0;
+  padding:9px 10px;
+  font-size:11px;
+  color:rgba(255,255,255,.72);
+}
+
+.proof-card{
+  margin:22px 0 0;
+  padding:18px;
+  border-radius:26px;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.proof-card h3{
+  margin:0 0 8px;
+  color:var(--gold);
+  font-size:18px;
+}
+
+.proof-card p{
+  margin:0;
+  color:rgba(255,255,255,.68);
+  font-size:13px;
+  line-height:1.4;
+}
+
+.bottom-nav{
+  position:fixed;
+  left:12px;
+  right:12px;
+  bottom:10px;
+  z-index:999;
+  height:86px;
+  display:grid;
+  grid-template-columns:1fr 1fr 90px 1fr 1fr;
+  align-items:end;
+  padding:10px 14px 18px;
+  border-radius:28px;
+  background:rgba(20,20,26,.55);
+  backdrop-filter:blur(35px);
+  -webkit-backdrop-filter:blur(35px);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 -8px 30px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.05);
+  overflow:hidden;
+}
+
+.bottom-nav:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:12%;
+  width:76%;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+}
+
+.bottom-nav a{
+  min-height:56px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  text-decoration:none;
+  color:rgba(255,255,255,.48);
+  font-size:9px;
+  font-weight:600;
+}
+
+.bottom-nav a.winners-active{
+  color:#ffd35a;
+}
+
+.nav-icon{
+  width:30px;
+  height:30px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.centre-action{
+  width:76px;
+  height:76px;
+  margin:0 auto;
+  transform:translateY(-42px);
+  border-radius:50%;
+  background:transparent;
+  border:none;
+  position:relative;
+  overflow:visible;
+  transition:transform .25s ease;
+}
+
+.centre-action:active{
+  transform:translateY(-40px) scale(.96);
+}
+
+.centre-logo{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  border-radius:50%;
+  display:block;
+  filter:drop-shadow(0 0 8px rgba(180,56,255,.65)) drop-shadow(0 8px 16px rgba(0,0,0,.55));
+}
+
+.centre-action b{
+  position:absolute;
+  bottom:-24px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#fff;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.3px;
+  white-space:nowrap;
+  text-shadow:0 2px 8px rgba(0,0,0,.6);
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <header class="header">
+    <img src="logo.png" alt="Marvalous">
+    <div>
+      <h1>Winners</h1>
+      <p>Real wins. Real people. Real proof.</p>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="hero-badge">🏆 MARVALOUS WINNERS</span>
+    <h2>Proof that people really win.</h2>
+    <p>Here’s a look at some of our latest winners, instant wins and Marvalous moments.</p>
+  </section>
+
+  <div class="feature-title">
+    <h2>Featured Winners</h2>
+    <span>Auto Scroll</span>
+  </div>
+
+  <section class="winner-marquee">
+    <div class="winner-track" id="winnerTrack"></div>
+  </section>
+
+  <h2 class="grid-title">Latest Winner Screenshots</h2>
+
+  <section class="winners-grid" id="winnerGrid"></section>
+
+  <section class="proof-card">
+    <h3>Want to be next?</h3>
+    <p>Tap Play below to browse the latest Marvalous competitions and instant win prizes.</p>
+  </section>
+
+</main>
+
+<nav class="bottom-nav">
+  <a href="index.html">
+    <svg viewBox="0 0 24 24" class="nav-icon">
+      <path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"></path>
+    </svg>
+    Home
+  </a>
+
+  <a href="scratch.html">
+    <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M11 13H13" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M12 9V3" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M20.1526 20.9174C22.0143 20.3289 22.5597 16.7547 21.3708 12.9344C20.1819 9.11398 17.709 6.49405 15.8474 7.08259C14.6972 7.44619 14.6438 8.86174 13.6968 9.378C13.473 9.5 13.1595 9.5 12.5324 9.5H11.4676C10.8405 9.5 10.527 9.5 10.3032 9.378C9.35625 8.86174 9.30278 7.44619 8.15264 7.08259C6.29102 6.49405 3.8181 9.11398 2.62922 12.9344C1.44035 16.7547 1.98573 20.3289 3.84736 20.9174C5.20631 21.347 6.891 20.067 8.16417 17.8583C9.01333 16.3851 9.39787 16 11.1039 16H12.8961C14.6021 16 14.9867 16.3851 15.8358 17.8583C17.109 20.067 18.7937 21.347 20.1526 20.9174Z"></path>
+    </svg>
+    Daily Game
+  </a>
+
+  <a class="centre-action" href="https://marvalouscompetitions.co.uk/">
+    <img src="logo.png" class="centre-logo" alt="Marvalous">
+    <b>Play</b>
+  </a>
+
+  <a class="winners-active" href="winners.html">
+    <svg viewBox="0 0 24 24" class="nav-icon">
+      <path d="M8 4h8v4a4 4 0 0 1-8 0V4z"></path>
+      <path d="M6 6H4a4 4 0 0 0 4 4"></path>
+      <path d="M18 6h2a4 4 0 0 1-4 4"></path>
+      <path d="M12 12v5M8 20h8"></path>
+    </svg>
+    Winners
+  </a>
+
+  <a href="https://marvalouscompetitions.co.uk/i/the-marvalous-league">
+    <svg viewBox="0 0 24 24" class="nav-icon">
+      <path d="M4 20V10"></path>
+      <path d="M10 20V4"></path>
+      <path d="M16 20v-7"></path>
+      <path d="M22 20H2"></path>
+    </svg>
+    League
+  </a>
+</nav>
+
+<script>
+const winners = [
+  { img: "winner1.png", text: "Latest winner" },
+  { img: "winner2.png", text: "Instant win claimed" },
+  { img: "winner3.png", text: "Prize winner" },
+  { img: "winner4.png", text: "Marvalous winner" },
+  { img: "winner5.png", text: "Cash prize won" },
+  { img: "winner6.png", text: "Another happy winner" }
+];
+
+const track = document.getElementById("winnerTrack");
+const grid = document.getElementById("winnerGrid");
+
+function winnerCard(item){
+  return `
+    <article class="winner-frame">
+      <div class="winner-inner">
+        <img src="${item.img}" alt="${item.text}">
+        <div class="winner-label">${item.text}</div>
+      </div>
+    </article>
+  `;
+}
+
+track.innerHTML = [...winners, ...winners].map(winnerCard).join("");
+
+grid.innerHTML = winners.map(item => `
+  <article class="grid-card">
+    <div class="grid-card-inner">
+      <img src="${item.img}" alt="${item.text}">
+      <p>${item.text}</p>
+    </div>
+  </article>
+`).join("");
+</script>
+
+</body>
+</html>
