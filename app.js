@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setTimeout(() => {
     if (splash) splash.classList.add("hide");
-  }, 1100);
+  }, 2100);
 });
 // DAILY CODE POPUP
 
