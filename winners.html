@@ -262,16 +262,30 @@ body:before{
   display:grid;
   grid-template-columns:1fr 1fr 90px 1fr 1fr;
   align-items:end;
-  padding:8px 12px 18px;
-  overflow:visible;
+  padding:10px 14px 18px;
   background:rgba(20,20,26,.55);
   backdrop-filter:blur(35px);
   -webkit-backdrop-filter:blur(35px);
   border-top:1px solid rgba(255,255,255,.08);
   border-radius:28px;
   box-shadow:
-    0 -8px 30px rgba(0,0,0,.45),
-    0 0 0 1px rgba(255,255,255,.05);
+  0 -8px 30px rgba(0,0,0,.45),
+  0 0 0 1px rgba(255,255,255,.05);
+  overflow:hidden;
+}
+.bottom-nav::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:12%;
+  width:76%;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.22),
+    transparent
+  );
 }
 
 .bottom-nav a{
@@ -283,22 +297,23 @@ body:before{
   gap:5px;
   text-decoration:none;
   color:rgba(255,255,255,.42);
-  font-size:10px;
-  font-weight:700;
+  font-size:9px;
+  font-weight:600;
+  transition:.25s;
 }
 
-.bottom-nav a.winners-active{
+.bottom-nav a.active{
   color:#ffd35a;
+  position:relative;
 }
 
 .nav-icon{
   width:30px;
   height:30px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2.2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+}
+.bottom-nav svg{
+    display:block;
+    margin-bottom:4px;
 }
 
 .centre-action{
@@ -311,8 +326,12 @@ body:before{
   border:none;
   position:relative;
   overflow:visible;
+  transition:transform .25s ease;
 }
-  
+.centre-action:hover{
+  transform:translateY(-45px) scale(1.03);
+}
+
 .centre-action:active{
   transform:translateY(-40px) scale(.96);
 }  
@@ -341,7 +360,6 @@ body:before{
   white-space:nowrap;
   text-shadow:0 2px 8px rgba(0,0,0,.6);
 }
-
 
 .winner-inner img,
 .grid-card img{
