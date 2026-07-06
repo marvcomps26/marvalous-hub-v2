@@ -653,163 +653,71 @@ button {
     width: 76px;
     height: 76px;
   }
-}
-/* FINAL MOCK MATCH PASS */
-
+/* CLEAN FINAL MOBILE FIXES */
 @media (max-width: 430px) {
   .app-shell{
-    padding: 12px 18px 108px !important;
-  }
-
-  .app-header{
-    align-items: center !important;
-    margin-bottom: 18px !important;
+    padding:12px 18px 118px;
   }
 
   .brand-logo{
-    width: 64px !important;
-    height: 64px !important;
+    width:58px;
+    height:58px;
   }
 
   .brand-block h1{
-    font-size: 17px !important;
-    line-height: 1.12 !important;
+    font-size:17px;
+    line-height:1.12;
+    white-space:nowrap;
   }
 
   .brand-block p{
-    font-size: 12px !important;
+    font-size:12px;
+    white-space:nowrap;
   }
 
   .icon-button{
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 50% !important;
-  }
-
-  .hero-card{
-    grid-template-columns: 42% 1fr !important;
-    min-height: 168px !important;
-    padding: 16px !important;
-    border-radius: 20px !important;
-  }
-
-  .hero-art{
-    height: 136px !important;
-  }
-
-  .trophy-cup{
-    transform: scale(1) !important;
-  }
-
-  .hero-copy h2{
-    font-size: 22px !important;
-    line-height: 1.08 !important;
-  }
-
-  .hero-copy p{
-    font-size: 13px !important;
-    line-height: 1.35 !important;
-  }
-
-  .gold-button{
-    width: 100% !important;
-    min-height: 42px !important;
-    font-size: 13px !important;
-  }
-
-  .stats-strip{
-    margin-top: 14px !important;
-    margin-bottom: 18px !important;
-    border-radius: 20px !important;
-  }
-
-  .stat-card{
-    min-height: 82px !important;
-  }
-
-  .quick-card{
-    min-height: 132px !important;
+    width:48px;
+    height:48px;
+    border-radius:50%;
   }
 
   .bottom-nav{
-    height: 80px !important;
+    height:92px;
+    padding:8px 12px 18px;
+    overflow:visible;
+  }
+
+  .bottom-nav a{
+    font-size:10px;
+  }
+
+  .centre-action{
+    width:82px;
+    height:82px;
+    transform:translateY(-26px);
+    border-radius:50%;
+    background:#130018;
+    border:5px solid #ffd54a;
+    box-shadow:
+      0 0 0 8px rgba(123,24,255,.35),
+      0 0 28px rgba(255,211,90,.65),
+      0 15px 30px rgba(0,0,0,.5);
+    overflow:hidden;
+  }
+
+  .centre-logo{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:50%;
+    display:block;
+  }
+
+  .centre-action b{
+    bottom:-22px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:10px;
   }
 }
-/* STEP 1 - HEADER MOCK MATCH */
-
-@media (max-width: 430px) {
-  .app-shell {
-    padding: 12px 18px 108px !important;
-  }
-
-  .app-header {
-    margin-bottom: 18px !important;
-    align-items: center !important;
-  }
-
-  .brand-block {
-    gap: 14px !important;
-  }
-
-  .brand-logo {
-    width: 58px !important;
-    height: 58px !important;
-  }
-
-  .brand-block h1 {
-    font-size: 17px !important;
-    line-height: 1.12 !important;
-    white-space: nowrap !important;
-  }
-
-  .brand-block p {
-    font-size: 12px !important;
-    white-space: nowrap !important;
-  }
-
-  .header-actions {
-    gap: 10px !important;
-  }
-
-  .icon-button {
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 50% !important;
-  }
-/* CENTRE BUY TICKETS LOGO BUTTON */
-.centre-action{
-  width:86px !important;
-  height:86px !important;
-  margin:0 auto !important;
-  transform:translateY(-28px) !important;
-  border-radius:50% !important;
-  background:#130018 !important;
-  border:5px solid #ffd54a !important;
-  box-shadow:
-    0 0 0 8px rgba(123,24,255,.35),
-    0 0 28px rgba(255,211,90,.65),
-    0 15px 30px rgba(0,0,0,.5) !important;
-  display:flex !important;
-  align-items:center !important;
-  justify-content:center !important;
-  position:relative !important;
-  overflow:hidden !important;
-}
-
-.centre-logo{
-  width:58px !important;
-  height:58px !important;
-  object-fit:contain !important;
-  border-radius:50% !important;
-  display:block !important;
-}
-
-.centre-action b{
-  position:absolute !important;
-  bottom:-24px !important;
-  left:50% !important;
-  transform:translateX(-50%) !important;
-  font-size:10px !important;
-  color:#fff !important;
-  white-space:nowrap !important;
-}
+    
