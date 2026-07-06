@@ -493,6 +493,21 @@ button {
   box-shadow:
   0 -8px 30px rgba(0,0,0,.45),
   0 0 0 1px rgba(255,255,255,.05);
+  overflow:hidden;
+}
+.bottom-nav::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:12%;
+  width:76%;
+  height:1px;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.22),
+    transparent
+  );
 }
 
 .bottom-nav a{
@@ -511,7 +526,17 @@ button {
 
 .bottom-nav a.active{
   color:#ffd35a;
-  transform:translateY(-2px);
+  position:relative;
+}
+
+.bottom-nav a.active::after{
+  content:"";
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#ffd35a;
+  box-shadow:0 0 10px rgba(255,211,90,.9);
+  margin-top:2px;
 }
 
 .nav-icon{
@@ -523,22 +548,32 @@ button {
   width:76px;
   height:76px;
   margin:0 auto;
-  transform:translateY(-34px);
+  transform:translateY(-42px);
   border-radius:50%;
   background:transparent;
   border:none;
-  box-shadow:none;
   position:relative;
   overflow:visible;
+  transition:transform .25s ease;
+}
+.centre-action:hover{
+  transform:translateY(-45px) scale(1.03);
 }
 
+.centre-action:active{
+  transform:translateY(-40px) scale(.96);
+}  
+  
+
 .centre-logo{
-  width:62px;
-  height:62px;
+  width:58px;
+  height:58px;
   object-fit:contain;
   border-radius:50%;
   display:block;
-  filter:drop-shadow(0 0 20px rgba(180,56,255,.9));
+  filter:
+    drop-shadow(0 0 8px rgba(180,56,255,.65))
+    drop-shadow(0 8px 16px rgba(0,0,0,.55));
 }
 
 .centre-action b{
