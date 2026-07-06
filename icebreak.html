@@ -558,7 +558,7 @@ button{
 
   <section class="code-card glass">
     <div class="code-title">Enter Today’s Code</div>
-    <div class="code-sub">Find today’s code on the Marvalous Facebook page.</div>
+    <div class="code-sub">Get today’s code from the Marvalous App homepage.</div>
     <div class="row">
       <input id="codeInput" placeholder="Enter daily code">
       <button onclick="unlockGame()">Unlock</button>
@@ -698,14 +698,44 @@ function csvSplit(row){
   const matched = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
   return matched ? matched.map(v=>v.replace(/^"|"$/g,"").trim()) : [];
 }
+function getDailyCodeDateKey(){
+  const now = new Date();
+  const ukNow = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
 
+  if (ukNow.getHours() < 9) {
+    ukNow.setDate(ukNow.getDate() - 1);
+  }
+
+  return ukNow.toISOString().slice(0, 10);
+}
+
+function generateDailyCode(){
+  const words = [
+    "MARV", "ICE", "LUCKY", "ELITE", "WIN", "VAULT",
+    "GOLD", "BONUS", "ARCTIC", "PRIZE", "CASH", "VIP",
+    "FROST", "SPIN", "MEGA", "POWER"
+  ];
+
+  const key = getDailyCodeDateKey();
+  let seed = 0;
+
+  for (let i = 0; i < key.length; i++) {
+    seed += key.charCodeAt(i) * (i + 1);
+  }
+
+  const word = words[seed % words.length];
+  const day = key.slice(-2);
+
+  return word + day;
+}
+  
 async function loadSettings(){
   try{
     const res = await fetch(SETTINGS_CSV_URL + "&t=" + Date.now(), {cache:"no-store"});
     const text = await res.text();
     const lines = text.trim().split(/\r?\n/);
 
-    DAILY_CODE = csvSplit(lines[0])[1].trim().toUpperCase();
+    DAILY_CODE = generateDailyCode();
     PRIZES = [];
 
     for(let i=4; i<lines.length; i++){
