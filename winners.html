@@ -43,32 +43,47 @@ body:before{
   background-size:54px 54px,92px 92px;
   z-index:-1;
 }
-
 .ticker{
   width:100%;
-  height:42px;
+  height:48px;
   overflow:hidden;
-  background:linear-gradient(90deg,#4c0072,#8b00d7,#4c0072);
-  border-bottom:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(90deg,#4d0076 0%,#8d18ff 50%,#4d0076 100%);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.15);
+  box-shadow:0 6px 18px rgba(143,32,255,.28);
 }
-
 .ticker-track{
   display:flex;
   width:max-content;
-  animation:tickerScroll 18s linear infinite;
+  animation:tickerScroll 24s linear infinite;
 }
-
 .ticker span{
-  padding:12px 28px;
+  display:flex;
+  align-items:center;
   white-space:nowrap;
+  padding:0 34px;
+  height:44px;
   font-size:13px;
   font-weight:900;
   letter-spacing:.3px;
+  color:#fff;
 }
 
+.ticker span::after{
+  content:"";
+  width:1px;
+  height:20px;
+  margin-left:34px;
+  background:rgba(255,255,255,.25);
+}  
+
 @keyframes tickerScroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(-50%);
+  }
 }
 
 .page{
