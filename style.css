@@ -898,68 +898,86 @@ button {
     letter-spacing:.5px;
     box-shadow:0 0 18px rgba(255,211,90,.15);
 }
-.splash-logo{
-  position:relative;
-  width:170px;
-  height:170px;
-  display:grid;
-  place-items:center;
-  animation:premiumLogo 1.8s ease forwards;
+.splash{
+  position:fixed;
+  inset:0;
+  z-index:999999;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:1;
+  visibility:visible;
+  transition:opacity .55s ease, visibility .55s ease;
 }
 
-.splash-logo::before{
-  content:"";
-  position:absolute;
-  inset:-42px;
-  border-radius:50%;
-  background:radial-gradient(circle, rgba(123,24,255,.75), transparent 68%);
+.splash.hide{
   opacity:0;
-  animation:premiumGlow 1.9s ease forwards;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.splash-logo{
+  position:relative;
+  width:165px;
+  height:165px;
+  display:grid;
+  place-items:center;
+  animation:logoIn 1.9s ease forwards;
+}
+
+.splash-glow{
+  position:absolute;
+  inset:-44px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(123,24,255,.72),rgba(123,24,255,.25),transparent 70%);
+  opacity:0;
+  animation:glowIn 2s ease forwards;
 }
 
 .splash-logo img{
-  width:145px;
-  height:145px;
+  width:140px;
+  height:140px;
   object-fit:contain;
   border-radius:50%;
   position:relative;
   z-index:2;
-  filter:drop-shadow(0 0 34px rgba(180,56,255,.95));
+  filter:drop-shadow(0 0 32px rgba(180,56,255,.95));
 }
 
-.splash-logo span{
+.splash-shine{
   position:absolute;
-  inset:0;
+  inset:10px;
   z-index:3;
   border-radius:50%;
   overflow:hidden;
 }
 
-.splash-logo span::after{
+.splash-shine:after{
   content:"";
   position:absolute;
-  top:-20%;
+  top:-30%;
   left:-90%;
-  width:60%;
-  height:140%;
-  background:linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent);
+  width:55%;
+  height:160%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
   transform:rotate(18deg);
-  animation:premiumShine 1.4s ease .55s forwards;
+  animation:shinePass 1.4s ease .65s forwards;
 }
 
-@keyframes premiumLogo{
-  0%{opacity:0; transform:scale(.55); filter:blur(8px);}
-  55%{opacity:1; transform:scale(1.08); filter:blur(0);}
-  75%{transform:scale(.98);}
-  100%{opacity:1; transform:scale(1);}
+@keyframes logoIn{
+  0%{opacity:0;transform:scale(.72);filter:blur(8px);}
+  45%{opacity:1;transform:scale(1.05);filter:blur(0);}
+  70%{transform:scale(.98);}
+  100%{opacity:1;transform:scale(1);}
 }
 
-@keyframes premiumGlow{
-  0%{opacity:0; transform:scale(.45);}
-  45%{opacity:1; transform:scale(1.08);}
-  100%{opacity:.72; transform:scale(1);}
+@keyframes glowIn{
+  0%{opacity:0;transform:scale(.55);}
+  45%{opacity:1;transform:scale(1.08);}
+  100%{opacity:.72;transform:scale(1);}
 }
 
-@keyframes premiumShine{
-  to{left:130%;}
+@keyframes shinePass{
+  to{left:135%;}
 }
