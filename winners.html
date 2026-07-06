@@ -271,7 +271,7 @@ body:before{
   box-shadow:
   0 -8px 30px rgba(0,0,0,.45),
   0 0 0 1px rgba(255,255,255,.05);
-  overflow:hidden;
+  overflow:visible;
 }
 .bottom-nav::before{
   content:"";
@@ -302,7 +302,8 @@ body:before{
   transition:.25s;
 }
 
-.bottom-nav a.active{
+.bottom-nav a.active,
+.bottom-nav a.winners-active{
   color:#ffd35a;
   position:relative;
 }
