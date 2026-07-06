@@ -701,31 +701,7 @@ button {
 
   .bottom-nav a{
     font-size:10px;
-  }
-
-  .centre-action{
-    width:82px;
-    height:82px;
-    transform:translateY(-26px);
-    border-radius:50%;
-    background:#130018;
-    border:5px solid #ffd54a;
-    box-shadow:
-      0 0 0 8px rgba(123,24,255,.35),
-      0 0 28px rgba(255,211,90,.65),
-      0 15px 30px rgba(0,0,0,.5);
-    overflow:hidden;
-  }
-
-.centre-logo{
-  width:60px;
-  height:60px;
-  object-fit:contain;
-  border-radius:50%;
-  display:block;
-  filter:drop-shadow(0 0 18px rgba(123,24,255,.8));
-} 
-  
+  }  
 }
 /* AUTO SCROLLING COMPETITIONS HERO */
 .comp-hero{
