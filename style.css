@@ -884,4 +884,18 @@ button {
   color:#fff;
   font-size:20px;
 }
-/* redeploy */
+.live-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:12px;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(255,211,90,.12);
+    border:1px solid rgba(255,211,90,.35);
+    color:#ffd35a;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:.5px;
+    box-shadow:0 0 18px rgba(255,211,90,.15);
+}
