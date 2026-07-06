@@ -529,13 +529,8 @@ button {
   border-radius:50%;
   background:transparent;
   border:none;
-  position:relative;
+  box-shadow:none;
   overflow:visible;
-
-  box-shadow:
-    0 0 6px rgba(255,255,255,.05),
-    0 0 25px rgba(123,24,255,.45),
-    0 20px 45px rgba(0,0,0,.55);
 }
 
 .centre-action .nav-icon {
@@ -722,13 +717,13 @@ button {
   }
 
 .centre-logo{
-  width:76px;
-  height:76px;
+  width:60px;
+  height:60px;
   object-fit:contain;
   border-radius:50%;
   display:block;
-}
-
+  filter:drop-shadow(0 0 18px rgba(123,24,255,.8));
+} 
   
 .centre-action b{
     bottom:-22px;
