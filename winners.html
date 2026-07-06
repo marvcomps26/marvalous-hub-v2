@@ -44,38 +44,39 @@ body:before{
   z-index:-1;
 }
 .ticker{
-  width:100%;
-  height:48px;
-  overflow:hidden;
-  background:linear-gradient(90deg,#4d0076 0%,#8d18ff 50%,#4d0076 100%);
-  border-top:1px solid rgba(255,255,255,.08);
-  border-bottom:1px solid rgba(255,255,255,.15);
-  box-shadow:0 6px 18px rgba(143,32,255,.28);
+    width:100%;
+    height:30px;
+    overflow:hidden;
+    background:linear-gradient(90deg,#5a008d,#9320ff,#5a008d);
+    border-top:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.08);
 }
+
 .ticker-track{
-  display:flex;
-  width:max-content;
-  animation:tickerScroll 24s linear infinite;
+    display:flex;
+    width:max-content;
+    animation:tickerScroll 24s linear infinite;
 }
+
 .ticker span{
-  display:flex;
-  align-items:center;
-  white-space:nowrap;
-  padding:0 34px;
-  height:44px;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:.3px;
-  color:#fff;
+    display:flex;
+    align-items:center;
+    height:30px;
+    padding:0 28px;
+    white-space:nowrap;
+    font-size:11px;
+    font-weight:800;
+    color:#fff;
+    letter-spacing:.3px;
 }
 
 .ticker span::after{
-  content:"";
-  width:1px;
-  height:20px;
-  margin-left:34px;
-  background:rgba(255,255,255,.25);
-}  
+    content:"";
+    width:1px;
+    height:14px;
+    margin-left:28px;
+    background:rgba(255,255,255,.22);
+}
 
 @keyframes tickerScroll{
   from{
