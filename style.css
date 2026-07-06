@@ -724,8 +724,11 @@ button {
 .comp-hero{
   display:block !important;
   min-height:auto !important;
-  padding:16px !important;
-}
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+  box-shadow:none !important;
+}  
 
 .hero-topline{
   display:flex;
