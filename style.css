@@ -898,63 +898,56 @@ button {
     letter-spacing:.5px;
     box-shadow:0 0 18px rgba(255,211,90,.15);
 }
-.splash-ring{
-  position:absolute;
-  width:188px;
-  height:188px;
-  border-radius:50%;
-  border:3px solid rgba(180,56,255,.16);
+.splash-logo{
+  position:relative;
+  width:155px;
+  height:155px;
+  display:grid;
+  place-items:center;
+  animation:logoEntrance 1.6s ease forwards;
 }
 
-.splash-ring::after{
+.splash-logo::before{
   content:"";
   position:absolute;
-  inset:-3px;
+  inset:-35px;
   border-radius:50%;
-  border:3px solid transparent;
-  border-top-color:#ffd35a;
-  border-right-color:#b638ff;
-  animation:ringDraw 1.6s ease forwards;
+  background:radial-gradient(circle, rgba(123,24,255,.65), transparent 68%);
+  animation:glowPulse 1.8s ease-in-out forwards;
 }
 
-.splash-card{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.splash-card img{
+.splash-logo img{
+  width:138px;
+  height:138px;
+  object-fit:contain;
+  border-radius:50%;
   position:relative;
   z-index:2;
-  animation:logoReveal 1.8s ease forwards;
+  filter:drop-shadow(0 0 30px rgba(180,56,255,.9));
 }
 
-.splash-burst{
+.splash-logo span{
   position:absolute;
-  width:230px;
-  height:230px;
+  inset:0;
+  z-index:3;
   border-radius:50%;
-  background:radial-gradient(circle, rgba(180,56,255,.35), transparent 65%);
-  opacity:0;
-  animation:burstFlash 1.8s ease forwards;
+  background:linear-gradient(120deg, transparent 28%, rgba(255,255,255,.5), transparent 72%);
+  transform:translateX(-190%) rotate(15deg);
+  animation:shineSweep 1.3s ease .45s forwards;
 }
 
-@keyframes ringDraw{
-  0%{transform:rotate(-160deg) scale(.75); opacity:0;}
-  45%{opacity:1;}
-  100%{transform:rotate(220deg) scale(1); opacity:1;}
-}
-
-@keyframes logoReveal{
-  0%{opacity:0; transform:scale(.55);}
-  55%{opacity:1; transform:scale(1.1);}
-  75%{transform:scale(.96);}
+@keyframes logoEntrance{
+  0%{opacity:0; transform:scale(.55); filter:blur(8px);}
+  55%{opacity:1; transform:scale(1.08); filter:blur(0);}
   100%{opacity:1; transform:scale(1);}
 }
 
-@keyframes burstFlash{
-  0%,60%{opacity:0; transform:scale(.6);}
-  78%{opacity:1; transform:scale(1.15);}
-  100%{opacity:0; transform:scale(1.45);}
+@keyframes glowPulse{
+  0%{opacity:0; transform:scale(.7);}
+  55%{opacity:1; transform:scale(1.15);}
+  100%{opacity:.65; transform:scale(1);}
+}
+
+@keyframes shineSweep{
+  to{transform:translateX(190%) rotate(15deg);}
 }
