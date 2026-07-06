@@ -44,48 +44,39 @@ body:before{
   z-index:-1;
 }
 .ticker{
-    width:100%;
-    height:30px;
-    overflow:hidden;
-    background:linear-gradient(90deg,#5a008d,#9320ff,#5a008d);
-    border-top:1px solid rgba(255,255,255,.08);
-    border-bottom:1px solid rgba(255,255,255,.08);
+  height:34px;
+  overflow:hidden;
+  background:linear-gradient(90deg,#5b009b,#2b0044);
+  border-bottom:1px solid rgba(255,211,90,.20);
 }
 
 .ticker-track{
-    display:flex;
-    width:max-content;
-    animation:tickerScroll 24s linear infinite;
+  display:flex;
+  align-items:center;
+  width:max-content;
+  height:34px;
+  animation:tickerMove 18s linear infinite;
 }
 
 .ticker span{
-    display:flex;
-    align-items:center;
-    height:30px;
-    padding:0 28px;
-    white-space:nowrap;
-    font-size:11px;
-    font-weight:800;
-    color:#fff;
-    letter-spacing:.3px;
+  padding:0 20px;
+  white-space:nowrap;
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.2px;
 }
 
-.ticker span::after{
-    content:"";
-    width:1px;
-    height:14px;
-    margin-left:28px;
-    background:rgba(255,255,255,.22);
+.ticker i{
+  width:1px;
+  height:15px;
+  background:rgba(255,255,255,.28);
 }
 
-@keyframes tickerScroll{
-  from{
-    transform:translateX(0);
-  }
-  to{
-    transform:translateX(-50%);
-  }
+@keyframes tickerMove{
+  to{transform:translateX(-50%);}
 }
+
 
 .page{
   width:min(520px,100%);
@@ -428,8 +419,14 @@ body:before{
 
 <div class="ticker">
   <div class="ticker-track">
-    <span>REAL WINNERS</span><span>WINNER PAYMENT PROOF</span><span>MARVALOUS MOMENTS</span><span>INSTANT WINS</span>
-    <span>REAL WINNERS</span><span>WINNER PAYMENT PROOF</span><span>MARVALOUS MOMENTS</span><span>INSTANT WINS</span>
+    <span>REAL WINNERS</span><i></i>
+    <span>WINNER PAYMENT PROOF</span><i></i>
+    <span>MARVALOUS MOMENTS</span><i></i>
+    <span>INSTANT WINS</span><i></i>
+    <span>REAL WINNERS</span><i></i>
+    <span>WINNER PAYMENT PROOF</span><i></i>
+    <span>MARVALOUS MOMENTS</span><i></i>
+    <span>INSTANT WINS</span><i></i>
   </div>
 </div>
 
