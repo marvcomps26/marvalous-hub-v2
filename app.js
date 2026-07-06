@@ -94,3 +94,7 @@ function updateCountdown(){
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+function toggleIphoneSteps(){
+  document.getElementById("iphoneSteps").classList.toggle("show");
+}
