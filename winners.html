@@ -348,6 +348,34 @@ body:before{
   white-space:nowrap;
   text-shadow:0 2px 8px rgba(0,0,0,.6);
 }
+
+.winner-inner img,
+.grid-card img{
+  cursor:pointer;
+}
+
+.winner-popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  backdrop-filter:blur(12px);
+  z-index:99999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+}
+
+.winner-popup.show{
+  display:flex;
+}
+
+.winner-popup img{
+  max-width:100%;
+  max-height:90vh;
+  border-radius:22px;
+  box-shadow:0 0 35px rgba(180,56,255,.65);
+}  
 </style>
 </head>
 
@@ -449,7 +477,7 @@ function winnerCard(item){
   return `
     <article class="winner-frame">
       <div class="winner-inner">
-        <img src="${item.img}" alt="${item.text}">
+        <img src="${item.img}" alt="${item.text}" onclick="openWinner(this.src)">
         <div class="winner-label">${item.text}</div>
       </div>
     </article>
@@ -461,12 +489,23 @@ track.innerHTML = [...winners, ...winners].map(winnerCard).join("");
 grid.innerHTML = winners.map(item => `
   <article class="grid-card">
     <div class="grid-card-inner">
-      <img src="${item.img}" alt="${item.text}">
+      <img src="${item.img}" alt="${item.text}" onclick="openWinner(this.src)">
       <p>${item.text}</p>
     </div>
   </article>
 `).join("");
-</script>
 
+function openWinner(src){
+  document.getElementById("winnerPopupImg").src = src;
+  document.getElementById("winnerPopup").classList.add("show");
+}
+
+function closeWinner(){
+  document.getElementById("winnerPopup").classList.remove("show");
+}
+</script>
+<div id="winnerPopup" class="winner-popup" onclick="closeWinner()">
+  <img id="winnerPopupImg" src="">
+</div>
 </body>
 </html>
