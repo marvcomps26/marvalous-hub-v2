@@ -840,3 +840,76 @@ button {
   from{transform:translateX(0);}
   to{transform:translateX(-2338px);}
 }    
+
+/* DAILY CODE POPUP */
+
+.daily-popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  backdrop-filter:blur(10px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+}
+
+.daily-popup.show{
+  display:flex;
+}
+
+.daily-popup-card{
+  width:90%;
+  max-width:360px;
+  background:linear-gradient(180deg,#220033,#0d0016);
+  border:2px solid rgba(255,211,90,.35);
+  border-radius:28px;
+  padding:28px 22px;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(0,0,0,.55);
+  position:relative;
+}
+
+.daily-title{
+  color:#ffd35a;
+  font-size:13px;
+  letter-spacing:2px;
+  font-weight:900;
+  margin-bottom:16px;
+}
+
+.daily-code{
+  font-size:42px;
+  font-weight:900;
+  color:#fff;
+  margin-bottom:14px;
+  text-shadow:0 0 18px #a100ff;
+}
+
+.daily-popup p{
+  color:rgba(255,255,255,.75);
+  margin-bottom:22px;
+}
+
+.daily-play-btn{
+  display:block;
+  text-decoration:none;
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#8f2fff,#5b00b5);
+  color:#fff;
+  font-weight:900;
+}
+
+.daily-close{
+  position:absolute;
+  top:12px;
+  right:12px;
+  width:36px;
+  height:36px;
+  border:none;
+  border-radius:50%;
+  background:#2c003d;
+  color:#fff;
+  font-size:20px;
+}
