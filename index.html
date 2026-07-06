@@ -117,20 +117,39 @@
  
   </div>
  </section> 
-
 <section class="install-card">
   <div class="install-icon">📱</div>
 
-  <div>
+  <div class="install-content">
     <h2>Install Marvalous</h2>
-    <p>Add us to your home screen for quick access to daily games, winners and live updates.</p>
+    <p>Faster access. Daily games. Live draws.</p>
 
-    <div class="install-steps">
-      <span>iPhone: Share → Add to Home Screen</span>
-      <span>Android: Tap Install when prompted</span>
+    <button class="install-row" onclick="toggleIphoneSteps()">
+      <span class="device-icon"></span>
+      <span>
+        <strong>iPhone</strong>
+        <small>Add to Home Screen</small>
+      </span>
+      <b>›</b>
+    </button>
+
+    <div id="iphoneSteps" class="iphone-steps">
+      <p>1. Tap the Share button</p>
+      <p>2. Tap Add to Home Screen</p>
+      <p>3. Tap Add</p>
     </div>
+
+    <button id="installBtn" class="install-row android-row">
+      <span class="device-icon">A</span>
+      <span>
+        <strong>Android</strong>
+        <small>Install App</small>
+      </span>
+      <b>›</b>
+    </button>
   </div>
-</section>    
+</section>
+
   </main>
 
   <nav class="bottom-nav">
