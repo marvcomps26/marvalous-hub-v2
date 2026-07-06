@@ -765,24 +765,24 @@ button {
   width:max-content;
   animation:compScroll 45s linear infinite;
 }
-
 .comp-card{
-  width:300px;
-  flex:0 0 300px;
-  border-radius:22px;
+  width:320px;
+  flex:0 0 320px;
+  border-radius:20px;
   overflow:hidden;
+  background:#050006;
+  border:1px solid rgba(180,56,255,.55);
+  box-shadow:0 0 18px rgba(123,24,255,.35);
 }
 
 .comp-card img{
   width:100%;
-  height:auto;
-  aspect-ratio:1 / 1;
-  object-fit:contain;
+  height:180px;
+  object-fit:cover;
   object-position:center;
   display:block;
-  background:#050006;
 }
-
+  
 @keyframes compScroll{
   from{transform:translateX(0);}
   to{transform:translateX(-2226px);}
