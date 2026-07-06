@@ -899,41 +899,62 @@ button {
     box-shadow:0 0 18px rgba(255,211,90,.15);
 }
 .splash-ring{
-    position:absolute;
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    border:3px solid transparent;
-    border-top-color:#b638ff;
-    border-right-color:#7b18ff;
-    animation:ringSpin 1.4s linear infinite;
+  position:absolute;
+  width:188px;
+  height:188px;
+  border-radius:50%;
+  border:3px solid rgba(180,56,255,.16);
+}
+
+.splash-ring::after{
+  content:"";
+  position:absolute;
+  inset:-3px;
+  border-radius:50%;
+  border:3px solid transparent;
+  border-top-color:#ffd35a;
+  border-right-color:#b638ff;
+  animation:ringDraw 1.6s ease forwards;
 }
 
 .splash-card{
-    position:relative;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .splash-card img{
-    position:relative;
-    z-index:2;
-    animation:logoPulse 1.8s ease-in-out infinite;
+  position:relative;
+  z-index:2;
+  animation:logoReveal 1.8s ease forwards;
 }
 
-@keyframes ringSpin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
+.splash-burst{
+  position:absolute;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(180,56,255,.35), transparent 65%);
+  opacity:0;
+  animation:burstFlash 1.8s ease forwards;
 }
 
-@keyframes logoPulse{
-    0%,100%{
-        transform:scale(1);
-        filter:drop-shadow(0 0 18px #8d28ff);
-    }
-    50%{
-        transform:scale(1.08);
-        filter:drop-shadow(0 0 40px #c24fff);
-    }
+@keyframes ringDraw{
+  0%{transform:rotate(-160deg) scale(.75); opacity:0;}
+  45%{opacity:1;}
+  100%{transform:rotate(220deg) scale(1); opacity:1;}
+}
+
+@keyframes logoReveal{
+  0%{opacity:0; transform:scale(.55);}
+  55%{opacity:1; transform:scale(1.1);}
+  75%{transform:scale(.96);}
+  100%{opacity:1; transform:scale(1);}
+}
+
+@keyframes burstFlash{
+  0%,60%{opacity:0; transform:scale(.6);}
+  78%{opacity:1; transform:scale(1.15);}
+  100%{opacity:0; transform:scale(1.45);}
 }
