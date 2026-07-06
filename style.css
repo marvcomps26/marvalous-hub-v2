@@ -1041,23 +1041,36 @@ button {
   font-size:14px;
   color:rgba(255,255,255,.82);
 }
-
 .live-countdown{
   display:flex;
-  gap:7px;
-  margin-top:4px;
+  gap:6px;
+  margin-top:8px;
+  flex-wrap:nowrap;
 }
 
 .live-countdown div{
-  width:44px;
+  width:50px;
   height:48px;
-  border-radius:13px;
+  border-radius:12px;
+  background:rgba(0,0,0,.55);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 }
 
-.live-btn{
-  margin-top:6px;
-  width:155px;
-  height:42px;
-  border-radius:999px;
-  font-size:13px;
-}    
+.live-countdown strong{
+  display:block;
+  font-size:20px;
+  line-height:1;
+  color:#ffd35a;
+}
+
+.live-countdown span{
+  display:block;
+  margin-top:3px;
+  font-size:8px;
+  line-height:1;
+  color:#fff;
+  text-transform:uppercase;
+}
