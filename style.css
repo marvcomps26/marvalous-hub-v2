@@ -76,28 +76,6 @@ button {
     pointer-events:none;
 }
 
-  
-.splash img {
-  width: 118px;
-  height: 118px;
-  object-fit: contain;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 28px rgba(180,80,255,.95));
-}
-
-.splash h1 {
-  margin: 14px 0 4px;
-  color: var(--gold);
-  font-size: 17px;
-  letter-spacing: 5px;
-}
-
-.splash p {
-  margin: 0;
-  color: rgba(255,255,255,.72);
-  font-size: 12px;
-}
-
 .ticker {
   height: 34px;
   overflow: hidden;
@@ -494,6 +472,7 @@ button {
 .gold-card em {
   background: linear-gradient(180deg, #ffd35a, #b57900);
   color: #1b0018;
+}
 
 .bottom-nav{
     position:fixed;
@@ -546,15 +525,17 @@ button {
   width:76px;
   height:76px;
   margin:0 auto;
-  transform:translateY(-30px);
+  transform:translateY(-38px);
   border-radius:50%;
   background:transparent;
   border:none;
-  box-shadow:
-    0 0 28px rgba(180,56,255,.55),
-    0 16px 34px rgba(0,0,0,.55);
   position:relative;
   overflow:visible;
+
+  box-shadow:
+    0 0 6px rgba(255,255,255,.05),
+    0 0 25px rgba(123,24,255,.45),
+    0 20px 45px rgba(0,0,0,.55);
 }
 
 .centre-action .nav-icon {
