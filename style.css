@@ -767,8 +767,8 @@ button {
 }
 
 .comp-card{
-  width:220px;
-  flex:0 0 220px;
+  width:300px;
+  flex:0 0 300px;
   border-radius:22px;
   overflow:hidden;
   background:#120018;
@@ -778,8 +778,8 @@ button {
 
 .comp-card img{
   width:100%;
-  height:170px;
-  object-fit:contain;
+  height:230px;
+  object-fit:cover;
   object-position:center;
   display:block;
   background:#050006;
@@ -787,5 +787,5 @@ button {
 
 @keyframes compScroll{
   from{transform:translateX(0);}
-  to{transform:translateX(-1638px);}
+  to{transform:translateX(-2226px);}
 }    
