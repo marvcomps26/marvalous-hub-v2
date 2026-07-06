@@ -529,16 +529,6 @@ button {
   position:relative;
 }
 
-.bottom-nav a.active::after{
-  content:"";
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#ffd35a;
-  box-shadow:0 0 10px rgba(255,211,90,.9);
-  margin-top:2px;
-}
-
 .nav-icon{
   width:30px;
   height:30px;
@@ -585,7 +575,7 @@ button {
   bottom:-24px;
   left:50%;
   transform:translateX(-50%);
-  color:#fff;
+  color:#ffd35a;
   font-size:14px;
   font-weight:900;
   letter-spacing:.3px;
