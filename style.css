@@ -986,3 +986,114 @@ button {
 @keyframes shinePass{
   to{left:135%;}
 }
+.live-card{
+    position:relative;
+    margin:20px 18px 30px;
+    border-radius:28px;
+    overflow:hidden;
+    min-height:235px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+}
+
+.live-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.live-overlay{
+    position:relative;
+    z-index:2;
+    padding:22px;
+    width:60%;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.live-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,
+        rgba(10,0,20,.92) 0%,
+        rgba(20,0,35,.82) 45%,
+        rgba(20,0,35,.18) 100%);
+}
+
+.live-badge{
+    display:inline-block;
+    width:max-content;
+    background:#ff2d55;
+    color:#fff;
+    font-weight:700;
+    font-size:11px;
+    padding:6px 12px;
+    border-radius:999px;
+}
+
+.live-overlay h2{
+    margin:0;
+    font-size:34px;
+    font-weight:900;
+    line-height:1;
+    color:#ffd35a;
+}
+
+.live-overlay h3{
+    margin:0;
+    font-size:24px;
+    color:#fff;
+}
+
+.live-overlay p{
+    margin:0;
+    color:#d8d8d8;
+}
+
+.live-countdown{
+    display:flex;
+    gap:10px;
+    margin-top:6px;
+}
+
+.live-countdown div{
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    width:64px;
+    height:64px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.live-countdown strong{
+    font-size:22px;
+    color:#ffd35a;
+    line-height:1;
+}
+
+.live-countdown span{
+    font-size:10px;
+    color:#bbb;
+    text-transform:uppercase;
+}
+
+.live-btn{
+    margin-top:12px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    height:48px;
+    border-radius:999px;
+    background:#ffd35a;
+    color:#111;
+    font-weight:800;
+    text-decoration:none;
+}
