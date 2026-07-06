@@ -155,8 +155,8 @@ button {
 }
 
 .brand-logo {
-  width: 72px;
-  height: 72px;
+  width: 82px;
+  height: 82px;
   object-fit: contain;
   border-radius: 50%;
   background: rgba(123,24,255,.12);
@@ -166,15 +166,15 @@ button {
 
 .brand-block h1 {
   margin: 0;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.08;
-  letter-spacing: -.3px;
+  letter-spacing: -.4px;
 }
 
 .brand-block p {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   color: var(--soft-white);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .header-actions {
