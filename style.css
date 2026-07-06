@@ -476,9 +476,9 @@ button {
 
 .bottom-nav{
   position:fixed;
-  left:0;
-  right:0;
-  bottom:0;
+  left:12px;
+  right:12px;
+  bottom:10px;
   z-index:999;
   height:92px;
   display:grid;
@@ -489,6 +489,7 @@ button {
   backdrop-filter:blur(26px);
   -webkit-backdrop-filter:blur(26px);
   border-top:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
   box-shadow:0 -18px 45px rgba(0,0,0,.75);
 }
 
@@ -500,13 +501,15 @@ button {
   justify-content:center;
   gap:5px;
   text-decoration:none;
-  color:rgba(255,255,255,.48);
-  font-size:10px;
-  font-weight:700;
+  color:rgba(255,255,255,.42);
+  font-size:9px;
+  font-weight:600;
+  transition:.25s;
 }
 
 .bottom-nav a.active{
   color:#ffd35a;
+  transform:translateY(-2px);
 }
 
 .nav-icon{
@@ -661,9 +664,20 @@ button {
     grid-template-columns: 1fr 1fr 86px 1fr 1fr;
   }
 
-  .centre-action {
-    width: 76px;
-    height: 76px;
+  .centre-action{
+  width:76px;
+  height:76px;
+  margin:0 auto;
+  transform:translateY(-42px);
+  border-radius:50%;
+  background:transparent;
+  border:none;
+  box-shadow:
+    0 6px 18px rgba(255,255,255,.05),
+    0 0 30px rgba(180,56,255,.45),
+    0 22px 45px rgba(0,0,0,.65);
+  position:relative;
+  overflow:visible;
   }
 /* CLEAN FINAL MOBILE FIXES */
 @media (max-width: 430px) {
