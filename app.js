@@ -69,3 +69,28 @@ function setDailyCode(){
 }
 
 document.addEventListener("DOMContentLoaded", setDailyCode);
+
+const drawDate = new Date("2026-07-12T19:00:00+01:00").getTime();
+
+function updateCountdown(){
+  const now = new Date().getTime();
+  const distance = drawDate - now;
+
+  if(distance <= 0){
+    document.getElementById("cd-days").textContent = "00";
+    document.getElementById("cd-hours").textContent = "00";
+    document.getElementById("cd-mins").textContent = "00";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((distance / (1000 * 60)) % 60);
+
+  document.getElementById("cd-days").textContent = String(days).padStart(2, "0");
+  document.getElementById("cd-hours").textContent = String(hours).padStart(2, "0");
+  document.getElementById("cd-mins").textContent = String(mins).padStart(2, "0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
