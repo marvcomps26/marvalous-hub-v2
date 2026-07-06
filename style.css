@@ -1075,9 +1075,9 @@ button {
   text-transform:uppercase;
 }
 .live-btn{
-  margin-top:10px;
-  width:170px;
-  height:42px;
+  margin-top:14px;
+  width:150px;
+  height:40px;
   border-radius:999px;
   display:flex;
   align-items:center;
