@@ -1074,3 +1074,22 @@ button {
   color:#fff;
   text-transform:uppercase;
 }
+.live-btn{
+  margin-top:8px;
+  width:165px;
+  height:38px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:900;
+  color:#fff;
+  background:rgba(123,24,255,.35);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.18),
+    0 0 18px rgba(180,56,255,.45);
+  backdrop-filter:blur(12px);
+}
