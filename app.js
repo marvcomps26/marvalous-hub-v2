@@ -98,3 +98,31 @@ setInterval(updateCountdown, 1000);
 function toggleIphoneSteps(){
   document.getElementById("iphoneSteps").classList.toggle("show");
 }
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  const installBtn = document.getElementById("installBtn");
+  if (!installBtn) return;
+
+  installBtn.style.display = "flex";
+
+  installBtn.addEventListener("click", async () => {
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    installBtn.style.display = "none";
+  });
+});
+
+window.addEventListener("appinstalled", () => {
+  const installBtn = document.getElementById("installBtn");
+  if (installBtn) installBtn.style.display = "none";
+});
+
+if (window.matchMedia("(display-mode: standalone)").matches) {
+  const installBtn = document.getElementById("installBtn");
+  if (installBtn) installBtn.style.display = "none";
+}
