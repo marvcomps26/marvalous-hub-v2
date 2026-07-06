@@ -771,15 +771,13 @@ button {
   flex:0 0 300px;
   border-radius:22px;
   overflow:hidden;
-  background:#120018;
-  border:1px solid rgba(255,211,90,.28);
-  box-shadow:0 12px 25px rgba(0,0,0,.35);
 }
 
 .comp-card img{
   width:100%;
-  height:230px;
-  object-fit:cover;
+  height:auto;
+  aspect-ratio:1 / 1;
+  object-fit:contain;
   object-position:center;
   display:block;
   background:#050006;
