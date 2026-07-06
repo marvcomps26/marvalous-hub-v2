@@ -720,4 +720,70 @@ button {
     font-size:10px;
   }
 }
-    
+/* AUTO SCROLLING COMPETITIONS HERO */
+.comp-hero{
+  display:block !important;
+  min-height:auto !important;
+  padding:16px !important;
+}
+
+.hero-topline{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:14px;
+}
+
+.hero-topline h2{
+  margin:0;
+  font-size:22px;
+}
+
+.hero-topline p{
+  margin:5px 0 0;
+  font-size:13px;
+  color:rgba(255,255,255,.72);
+}
+
+.hero-topline a{
+  color:#ffd35a;
+  font-weight:900;
+  text-decoration:none;
+  font-size:13px;
+  white-space:nowrap;
+}
+
+.auto-carousel{
+  overflow:hidden;
+  width:100%;
+}
+
+.carousel-track{
+  display:flex;
+  gap:14px;
+  width:max-content;
+  animation:compScroll 45s linear infinite;
+}
+
+.comp-card{
+  width:220px;
+  flex:0 0 220px;
+  border-radius:22px;
+  overflow:hidden;
+  background:#120018;
+  border:1px solid rgba(255,211,90,.28);
+  box-shadow:0 12px 25px rgba(0,0,0,.35);
+}
+
+.comp-card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  display:block;
+}
+
+@keyframes compScroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-1638px);}
+}    
