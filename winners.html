@@ -406,7 +406,7 @@ body:before{
     <div class="winner-track" id="winnerTrack"></div>
   </section>
 
-  <h2 class="grid-title">Latest Winner Screenshots</h2>
+  <h2 class="grid-title">Winner Payment Proof</h2>
 
   <section class="winners-grid" id="winnerGrid"></section>
 
@@ -462,12 +462,19 @@ body:before{
 
 <script>
 const winners = [
-  { img: "winner1.png", text: "Latest winner" },
-  { img: "winner2.png", text: "Instant win claimed" },
-  { img: "winner3.png", text: "Prize winner" },
-  { img: "winner4.png", text: "Marvalous winner" },
-  { img: "winner5.png", text: "Cash prize won" },
-  { img: "winner6.png", text: "Another happy winner" }
+  { img: "winner1.png", text: "Winner" },
+  { img: "winner2.png", text: "Winner" },
+  { img: "winner3.png", text: "Winner" },
+  { img: "winner4.png", text: "Winner" },
+  { img: "winner5.png", text: "Winner" },
+  { img: "winner6.png", text: "Winner" }
+];
+
+const receipts = [
+  { img: "receipt1.png", text: "Paid Receipt" },
+  { img: "receipt2.png", text: "Paid Receipt" },
+  { img: "receipt3.png", text: "Paid Receipt" },
+  { img: "receipt4.png", text: "Paid Receipt" }
 ];
 
 const track = document.getElementById("winnerTrack");
@@ -486,7 +493,7 @@ function winnerCard(item){
 
 track.innerHTML = [...winners, ...winners].map(winnerCard).join("");
 
-grid.innerHTML = winners.map(item => `
+grid.innerHTML = receipts.map(item => `
   <article class="grid-card">
     <div class="grid-card-inner">
       <img src="${item.img}" alt="${item.text}" onclick="openWinner(this.src)">
