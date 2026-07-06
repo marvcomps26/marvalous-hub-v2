@@ -80,7 +80,7 @@ body:before{
   display:flex;
   align-items:center;
   gap:16px;
-  margin-bottom:24px;
+  margin-bottom:28px;
 }
 
 .app-header img{
@@ -181,17 +181,19 @@ body:before{
 
 .winner-marquee{
   overflow:hidden;
+  width:100vw;
   margin-left:-18px;
   margin-right:-18px;
   padding:0 0 8px;
 }
-
 .winner-track{
   display:flex;
   gap:15px;
   width:max-content;
-  animation:winnerScroll 42s linear infinite;
+  animation:winnerScroll 22s linear infinite;
+  will-change:transform;
 }
+    
 
 @keyframes winnerScroll{
   from{transform:translateX(0)}
@@ -423,19 +425,6 @@ body:before{
     </div>
   </header>
 
-  <section class="winner-trust-card">
-  <div class="trust-left">
-    <span>REAL WINNERS</span>
-    <h2>Winners Wall</h2>
-    <p>Scroll through real Marvalous wins, prize photos and payment proof.</p>
-  </div>
-
-  <div class="trust-stats">
-    <div><strong>6+</strong><small>Latest Wins</small></div>
-    <div><strong>4</strong><small>Paid Proofs</small></div>
-  </div>
-  </section>
-      
   <div class="section-title">
     <h2>Featured Winners</h2>
     <span>Auto Scroll</span>
