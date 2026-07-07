@@ -146,3 +146,39 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("OneSignal worker registered"))
     .catch(err => console.log("OneSignal worker error", err));
 }
+function openLeagueForm(){
+  document.getElementById("leagueModal").style.display = "flex";
+}
+
+function closeLeagueForm(){
+  document.getElementById("leagueModal").style.display = "none";
+}
+
+function submitLeagueSignup(){
+  const name = document.getElementById("leagueName").value.trim();
+  const email = document.getElementById("leagueEmail").value.trim();
+  const status = document.getElementById("leagueStatus");
+
+  if(!name || !email){
+    alert("Please enter your name and email.");
+    return;
+  }
+
+  status.textContent = "Sending...";
+
+  fetch("https://script.google.com/macros/s/AKfycbwqv0mOcwHVa2AaGzvwMLjw-nqV4LonCg3-MXpDcgcMbhmw2ORo4JmO8JiCxXZkBScC/exec", {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({
+      type: "leagueSignup",
+      name: name,
+      email: email
+    })
+  }).then(() => {
+    status.textContent = "Request sent! We’ll add you shortly 💜";
+    document.getElementById("leagueSubmitBtn").style.display = "none";
+    document.getElementById("leagueCloseBtn").textContent = "Close";
+  }).catch(() => {
+    status.textContent = "Something went wrong. Please try again.";
+  });
+}
