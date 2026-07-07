@@ -1197,3 +1197,117 @@ button {
 .iphone-steps.show{
   display:block;
 }
+
+.social-card{
+    position:relative;
+    overflow:hidden;
+    margin:20px 0;
+    padding:26px 22px;
+    border-radius:30px;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at top right,rgba(255,211,90,.08),transparent 28%),
+        radial-gradient(circle at bottom left,rgba(123,24,255,.18),transparent 35%),
+        linear-gradient(180deg,#09000d 0%,#040006 100%);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06),
+        0 18px 45px rgba(0,0,0,.55),
+        0 0 35px rgba(123,24,255,.15);
+}
+
+.social-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:15%;
+    width:70%;
+    height:1px;
+    background:linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,.28),
+    transparent);
+}
+
+.social-card h3{
+    margin:0;
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:-.5px;
+    color:#fff;
+}
+
+.social-card h3 span{
+    color:#ffd35a;
+}
+
+.social-card p{
+    margin:8px 0 22px;
+    font-size:14px;
+    color:rgba(255,255,255,.60);
+}
+
+.social-buttons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social-buttons a{
+    width:72px;
+    height:72px;
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+      linear-gradient(180deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.02));
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.08),
+      0 0 18px rgba(123,24,255,.18),
+      0 14px 28px rgba(0,0,0,.35);
+
+    transition:.25s;
+}
+
+.social-buttons a:hover{
+    transform:translateY(-4px);
+    box-shadow:
+      0 0 28px rgba(123,24,255,.35),
+      0 18px 35px rgba(0,0,0,.45);
+}
+
+.social-buttons img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+}  
+.social-topline{
+    display:flex;
+    justify-content:center;
+    margin-bottom:12px;
+}
+
+.social-topline span{
+    display:inline-flex;
+    align-items:center;
+    padding:8px 16px;
+    border-radius:999px;
+    background:rgba(255,211,90,.08);
+    border:1px solid rgba(255,211,90,.22);
+    color:#ffd35a;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+}
