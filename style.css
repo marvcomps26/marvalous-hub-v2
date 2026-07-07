@@ -1312,48 +1312,43 @@ button {
   box-shadow:0 0 18px rgba(255,211,90,.18);
 }
 .league-join-wrap{
-  margin:18px 0 20px;
+  margin:16px 0;
 }
 
 .league-join-btn{
   width:100%;
-  min-height:86px;
-  border:1px solid rgba(180,56,255,.28);
-  border-radius:26px;
-  padding:16px 18px;
-  background:
-    radial-gradient(circle at 15% 50%,rgba(123,24,255,.30),transparent 28%),
-    linear-gradient(135deg,rgba(18,0,28,.96),rgba(6,0,10,.98));
-  color:#fff;
-  font-size:0;
-  box-shadow:0 14px 32px rgba(0,0,0,.45),0 0 22px rgba(123,24,255,.18);
+  min-height:72px;
+  padding:14px 18px;
+  border-radius:22px;
+  border:1px solid rgba(180,56,255,.22);
+  background:linear-gradient(135deg,#170020,#0b0011);
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
 }
 
 .league-join-btn::before{
   content:"🏆";
   display:inline-grid;
   place-items:center;
-  width:54px;
-  height:54px;
-  margin-right:16px;
+  width:48px;
+  height:48px;
+  margin-right:14px;
   border-radius:50%;
-  font-size:30px;
+  font-size:24px;
   vertical-align:middle;
   background:rgba(123,24,255,.18);
-  border:2px solid rgba(180,56,255,.65);
-  box-shadow:0 0 18px rgba(123,24,255,.55);
+  border:2px solid rgba(180,56,255,.55);
 }
 
 .league-join-btn::after{
-  content:"Join The League\A Start earning points and climb the leaderboard  ›";
+  content:"Join The League\AStart earning points";
   white-space:pre-line;
   display:inline-block;
-  width:calc(100% - 78px);
+  width:calc(100% - 70px);
   vertical-align:middle;
   text-align:left;
-  font-size:22px;
-  line-height:1.15;
-  font-weight:900;
+  font-size:15px;
+  line-height:1.25;
+  font-weight:700;
 }
 
 .league-modal{
