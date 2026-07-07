@@ -171,7 +171,47 @@ OneSignalDeferred.push(async function(OneSignal) {
   </div>
 
 </section>
-    
+<div class="league-join-wrap">
+  <button class="league-join-btn" onclick="openLeagueForm()">
+    🏆 JOIN THE LEAGUE
+  </button>
+</div>
+
+<div id="leagueModal" class="league-modal">
+  <div class="league-modal-card">
+
+    <h2>Join The League</h2>
+
+    <p>
+      Already got a Marvalous website account? Complete this form and we'll add you to the league.
+      <br><br>
+      No account yet? Sign up on our website first, then come back and join the league.
+    </p>
+
+    <input
+      id="leagueName"
+      type="text"
+      placeholder="Full name"
+    >
+
+    <input
+      id="leagueEmail"
+      type="email"
+      placeholder="Email address"
+    >
+
+    <button id="leagueSubmitBtn" onclick="submitLeagueSignup()">
+      Join League
+    </button>
+
+    <button id="leagueCloseBtn" onclick="closeLeagueForm()">
+      Cancel
+    </button>
+
+    <p id="leagueStatus"></p>
+
+  </div>
+</div>   
 <section class="install-card">
   <div class="install-icon">📱</div>
 
