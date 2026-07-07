@@ -139,3 +139,20 @@ function copyContactEmail(){
   navigator.clipboard.writeText("enquiries@marvalouscompetitions.co.uk");
   alert("Email copied");
 }
+async function turnOnNotifications(){
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+  OneSignalDeferred.push(async function(OneSignal) {
+    try {
+      await OneSignal.Notifications.requestPermission();
+
+      if (OneSignal.Notifications.permission) {
+        alert("You're in! Marvalous alerts are switched on 🔔");
+      } else {
+        alert("Notifications weren't switched on. Please tap Allow when asked.");
+      }
+    } catch(e) {
+      alert("Alerts are still loading. Please try again in a moment.");
+    }
+  });
+}
