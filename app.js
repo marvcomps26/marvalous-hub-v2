@@ -144,3 +144,8 @@ async function turnOnNotifications(){
     }
   });
 }
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./onesignalsdkworker.js")
+    .then(() => console.log("OneSignal worker registered"))
+    .catch(err => console.log("OneSignal worker error", err));
+}
