@@ -127,18 +127,6 @@ if (window.matchMedia("(display-mode: standalone)").matches) {
   if (installBtn) installBtn.style.display = "none";
 }
 
-function openContactPopup(){
-  document.getElementById("contactPopup").classList.add("show");
-}
-
-function closeContactPopup(){
-  document.getElementById("contactPopup").classList.remove("show");
-}
-
-function copyContactEmail(){
-  navigator.clipboard.writeText("enquiries@marvalouscompetitions.co.uk");
-  alert("Email copied");
-}
 async function turnOnNotifications(){
   window.OneSignalDeferred = window.OneSignalDeferred || [];
 
