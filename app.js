@@ -25,46 +25,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-// AUTO DAILY CODE - CHANGES EVERY DAY AT 9AM UK TIME
+// DAILY CODE FROM GOOGLE SHEET
 
-function getDailyCodeDateKey(){
-  const now = new Date();
+const SETTINGS_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSlaiXI-x0C_wLvxmELI21rTu9uFR87MYtx9gqV_z_Z3hZ5nOCQBnb9No6i9MtZyqBD3c9wTo1tmz6x/pub?output=csv";
 
-  // UK time offset handling using Europe/London
-  const ukNow = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
-
-  // If before 9am, keep yesterday's code
-  if (ukNow.getHours() < 9) {
-    ukNow.setDate(ukNow.getDate() - 1);
-  }
-
-  return ukNow.toISOString().slice(0, 10);
+function csvSplit(row){
+  const matched = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+  return matched ? matched.map(v => v.replace(/^"|"$/g, "").trim()) : [];
 }
 
-function generateDailyCode(){
-  const words = [
-    "MARV", "ICE", "LUCKY", "ELITE", "WIN", "VAULT",
-    "GOLD", "BONUS", "ARCTIC", "PRIZE", "CASH", "VIP",
-    "FROST", "SPIN", "MEGA", "POWER"
-  ];
-
-  const key = getDailyCodeDateKey();
-  let seed = 0;
-
-  for (let i = 0; i < key.length; i++) {
-    seed += key.charCodeAt(i) * (i + 1);
-  }
-
-  const word = words[seed % words.length];
-  const day = key.slice(-2);
-
-  return word + day;
-}
-
-function setDailyCode(){
+async function setDailyCode(){
   const codeBox = document.getElementById("dailyCodeText");
-  if (codeBox) {
-    codeBox.textContent = generateDailyCode();
+  if (!codeBox) return;
+
+  try{
+    const res = await fetch(SETTINGS_CSV_URL + "&t=" + Date.now(), {
+      cache: "no-store"
+    });
+
+    const text = await res.text();
+    const lines = text.trim().split(/\r?\n/);
+
+    const row = csvSplit(lines[0]);
+    codeBox.textContent = row[1].toUpperCase();
+
+  } catch(err){
+    codeBox.textContent = "Code unavailable";
+    console.log(err);
   }
 }
 
