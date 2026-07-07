@@ -1201,8 +1201,8 @@ button {
 .social-card{
     position:relative;
     overflow:hidden;
-    margin:20px 0;
-    padding:26px 22px;
+    margin:18px 0;
+    padding:18px 20px;
     border-radius:30px;
     text-align:center;
 
@@ -1233,10 +1233,11 @@ button {
 }
 
 .social-card h3{
-    margin:0;
+    margin:8px 0 4px;
     font-size:28px;
     font-weight:900;
-    letter-spacing:-.5px;
+    line-height:1;
+    letter-spacing:-.1px;
     color:#fff;
 }
 
@@ -1253,12 +1254,13 @@ button {
 .social-buttons{
     display:flex;
     justify-content:center;
-    gap:18px;
+    gap:14px;
+    margin-top:12px;
 }
 
 .social-buttons a{
-    width:72px;
-    height:72px;
+    width:58px;
+    height:58px;
     border-radius:24px;
 
     display:flex;
