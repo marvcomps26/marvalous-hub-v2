@@ -1311,3 +1311,114 @@ button {
   font-size:22px;
   box-shadow:0 0 18px rgba(255,211,90,.18);
 }
+.league-join-wrap{
+  margin:18px 0 20px;
+}
+
+.league-join-btn{
+  width:100%;
+  min-height:86px;
+  border:1px solid rgba(180,56,255,.28);
+  border-radius:26px;
+  padding:16px 18px;
+  background:
+    radial-gradient(circle at 15% 50%,rgba(123,24,255,.30),transparent 28%),
+    linear-gradient(135deg,rgba(18,0,28,.96),rgba(6,0,10,.98));
+  color:#fff;
+  font-size:0;
+  box-shadow:0 14px 32px rgba(0,0,0,.45),0 0 22px rgba(123,24,255,.18);
+}
+
+.league-join-btn::before{
+  content:"🏆";
+  display:inline-grid;
+  place-items:center;
+  width:54px;
+  height:54px;
+  margin-right:16px;
+  border-radius:50%;
+  font-size:30px;
+  vertical-align:middle;
+  background:rgba(123,24,255,.18);
+  border:2px solid rgba(180,56,255,.65);
+  box-shadow:0 0 18px rgba(123,24,255,.55);
+}
+
+.league-join-btn::after{
+  content:"Join The League\A Start earning points and climb the leaderboard  ›";
+  white-space:pre-line;
+  display:inline-block;
+  width:calc(100% - 78px);
+  vertical-align:middle;
+  text-align:left;
+  font-size:22px;
+  line-height:1.15;
+  font-weight:900;
+}
+
+.league-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:rgba(0,0,0,.78);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.league-modal-card{
+  width:min(390px,100%);
+  background:#120018;
+  border:1px solid rgba(180,56,255,.45);
+  border-radius:30px;
+  padding:24px;
+  color:#fff;
+}
+
+.league-modal-card h2{
+  margin:0 0 18px;
+  font-size:28px;
+}
+
+.league-modal-card p{
+  color:rgba(255,255,255,.75);
+  font-size:16px;
+  line-height:1.35;
+}
+
+.league-modal-card input{
+  width:100%;
+  padding:15px;
+  margin:8px 0;
+  border:0;
+  border-radius:18px;
+  font-size:16px;
+}
+
+#leagueSubmitBtn,
+#leagueCloseBtn{
+  width:100%;
+  padding:16px;
+  margin-top:12px;
+  border:0;
+  border-radius:18px;
+  font-size:16px;
+  font-weight:900;
+}
+
+#leagueSubmitBtn{
+  background:linear-gradient(135deg,#7b18ff,#b638ff);
+  color:#fff;
+}
+
+#leagueCloseBtn{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+
+#leagueStatus{
+  text-align:center;
+  color:#ffd35a;
+  font-weight:800;
+}
