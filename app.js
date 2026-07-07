@@ -132,12 +132,15 @@ async function turnOnNotifications(){
 
   OneSignalDeferred.push(async function(OneSignal) {
     try {
-      await OneSignal.showSlidedownPrompt();
+      await OneSignal.Slidedown.promptPush();
     } catch(e) {
-      alert("Alerts are still loading. Please try again in a moment.");
+      alert("Alerts are still loading. Please refresh and try again.");
     }
   });
 }
+setTimeout(() => {
+  turnOnNotifications();
+}, 3000);
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./onesignalsdkworker.js")
     .then(() => console.log("OneSignal worker registered"))
