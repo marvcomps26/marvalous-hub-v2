@@ -132,13 +132,7 @@ async function turnOnNotifications(){
 
   OneSignalDeferred.push(async function(OneSignal) {
     try {
-      await OneSignal.Notifications.requestPermission();
-
-      if (OneSignal.Notifications.permission) {
-        alert("You're in! Marvalous alerts are switched on 🔔");
-      } else {
-        alert("Notifications weren't switched on. Please tap Allow when asked.");
-      }
+      await OneSignal.showSlidedownPrompt();
     } catch(e) {
       alert("Alerts are still loading. Please try again in a moment.");
     }
