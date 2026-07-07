@@ -1311,44 +1311,46 @@ button {
   font-size:22px;
   box-shadow:0 0 18px rgba(255,211,90,.18);
 }
-.league-join-wrap{
+.league-card{
+  display:flex;
+  align-items:center;
+  gap:14px;
   margin:16px 0;
-}
-
-.league-join-btn{
-  width:100%;
-  min-height:72px;
-  padding:14px 18px;
-  border-radius:22px;
+  padding:14px 16px;
+  min-height:82px;
+  border-radius:24px;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#170020,#07000b);
   border:1px solid rgba(180,56,255,.22);
-  background:linear-gradient(135deg,#170020,#0b0011);
-  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  box-shadow:0 10px 26px rgba(0,0,0,.38), 0 0 18px rgba(123,24,255,.14);
 }
 
-.league-join-btn::before{
-  content:"🏆";
-  display:inline-grid;
-  place-items:center;
-  width:48px;
-  height:48px;
-  margin-right:14px;
+.league-icon{
+  width:54px;
+  height:54px;
+  min-width:54px;
   border-radius:50%;
-  font-size:24px;
-  vertical-align:middle;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
   background:rgba(123,24,255,.18);
   border:2px solid rgba(180,56,255,.55);
+  box-shadow:0 0 16px rgba(123,24,255,.38);
 }
 
-.league-join-btn::after{
-  content:"Join The League\AStart earning points";
-  white-space:pre-line;
-  display:inline-block;
-  width:calc(100% - 70px);
-  vertical-align:middle;
-  text-align:left;
-  font-size:15px;
+.league-text h3{
+  margin:0 0 3px;
+  font-size:18px;
+  font-weight:900;
+}
+
+.league-text p{
+  margin:0;
+  font-size:12px;
   line-height:1.25;
-  font-weight:700;
+  color:rgba(255,255,255,.62);
 }
 
 .league-modal{
