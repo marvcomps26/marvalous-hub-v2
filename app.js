@@ -56,7 +56,30 @@ async function setDailyCode(){
 }
 
 document.addEventListener("DOMContentLoaded", setDailyCode);
+async function setTickerText(){
+  try{
+    const res = await fetch(SETTINGS_CSV_URL + "&t=" + Date.now(), {
+      cache: "no-store"
+    });
 
+    const text = await res.text();
+    const lines = text.trim().split(/\r?\n/);
+
+    const row = csvSplit(lines[1]);
+    const tickerText = row[1];
+
+    if(!tickerText) return;
+
+    document.querySelectorAll(".ticker-track span").forEach(span=>{
+      span.textContent = tickerText;
+    });
+
+  }catch(err){
+    console.log(err);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", setTickerText);
 const drawDate = new Date("2026-07-12T19:00:00+01:00").getTime();
 
 function updateCountdown(){
