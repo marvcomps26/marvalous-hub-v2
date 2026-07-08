@@ -1,7 +1,7 @@
-exports.handler = async function () {
+exports.handler = async (event, context) => {
   try {
-    const res = await fetch("https://www.marvalouscompetitions.co.uk/instant-winners");
-    const html = await res.text();
+    const response = await fetch("https://www.marvalouscompetitions.co.uk/instant-winners");
+    const html = await response.text();
 
     const clean = html
       .replace(/<script[\s\S]*?<\/script>/gi, "")
@@ -17,14 +17,16 @@ exports.handler = async function () {
         "Access-Control-Allow-Origin": "*"
       },
       body: JSON.stringify({
-        text: clean.slice(0, 900)
+        text: clean.slice(0, 1200)
       })
     };
 
-  } catch (err) {
+  } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Could not load winners" })
+      body: JSON.stringify({
+        error: "Could not load winners"
+      })
     };
   }
 };
