@@ -1465,19 +1465,22 @@ button {
 }
 @media (min-width: 700px){
   body{
-    display:flex;
-    justify-content:center;
+    display:block;
     background:#050006;
   }
 
   .app-shell{
     width:430px;
     max-width:430px;
+    margin:0 auto;
   }
 
   .ticker{
-    width:430px;
-    margin:0 auto;
+    width:100%;
+  }
+
+  .ticker-track{
+    width:max-content;
   }
 
   .bottom-nav{
@@ -1487,7 +1490,4 @@ button {
     width:430px;
     max-width:430px;
   }
-}
-img{
-  max-width:100%;
 }
