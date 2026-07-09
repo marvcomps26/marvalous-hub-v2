@@ -713,6 +713,7 @@ button {
   position:relative;
   overflow:visible;
   }
+}
 /* CLEAN FINAL MOBILE FIXES */
 @media (max-width: 430px) {
   .app-shell{
