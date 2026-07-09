@@ -1489,5 +1489,14 @@ button {
     transform:translateX(-50%);
     width:430px;
     max-width:430px;
+    overflow:visible;
+  }
+.centre-action{
+    transform:translateY(-22px);
+  }
+
+  .centre-logo{
+    width:52px;
+    height:52px;
   }
 }
