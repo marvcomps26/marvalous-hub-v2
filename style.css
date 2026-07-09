@@ -1469,31 +1469,34 @@ button {
     background:#050006;
   }
 
-  .app-shell{
-    width:430px;
-    max-width:430px;
+.app-shell{
+    width:min(100%, 700px);
+    max-width:700px;
     margin:0 auto;
-  }
+}
 
   .ticker{
-    width:100%;
+    width:min(100%,700px);
+    margin:0 auto;
   }
 
   .ticker-track{
     width:max-content;
   }
-
-  .bottom-nav{
+  
+.bottom-nav{
     left:50%;
     right:auto;
     transform:translateX(-50%);
-    width:430px;
-    max-width:430px;
+    width:min(calc(100% - 24px),700px);
+    max-width:700px;
     overflow:visible;
-  }
+}
+
 .centre-action{
-    transform:translateY(-22px);
-  }
+    transform:translateY(-28px);
+}
+  
 
   .centre-logo{
     width:52px;
