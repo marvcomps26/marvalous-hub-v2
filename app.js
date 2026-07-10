@@ -210,7 +210,7 @@ function submitLeagueSignup(){
     const elapsed = Math.min((currentTime - lastTime) / 1000, 0.05);
     lastTime = currentTime;
 
-    position -= 25 * elapsed;
+    position -= 30 * elapsed;
 
     if (groupWidth && position <= -groupWidth) {
       position += groupWidth;
