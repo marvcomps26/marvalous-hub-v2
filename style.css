@@ -87,7 +87,6 @@ button {
   display:flex;
   width:max-content;
   height:34px;
-  animation:tickerMove 180s linear infinite;
   will-change:transform;
   -webkit-backface-visibility:hidden;
   backface-visibility:hidden;
@@ -120,16 +119,6 @@ button {
   width:1px;
   height:15px;
   background:rgba(255,255,255,.28);
-}
-
-@keyframes tickerMove{
-  from{
-    transform:translate3d(0,0,0);
-  }
-
-  to{
-    transform:translate3d(-50%,0,0);
-  }
 }
 
 .app-shell {
