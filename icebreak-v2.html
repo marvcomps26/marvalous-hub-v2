@@ -698,28 +698,6 @@ function csvSplit(row){
   const matched = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
   return matched ? matched.map(v=>v.replace(/^"|"$/g,"").trim()) : [];
 }
-function getDailyCodeDateKey(){
-  const now = new Date();
-  const ukNow = new Date(now.toLocaleString("en-US", { timeZone: "Europe/London" }));
-
-  if (ukNow.getHours() < 9) {
-    ukNow.setDate(ukNow.getDate() - 1);
-  }
-
-  return ukNow.toISOString().slice(0, 10);
-}
-
-  let seed = 0;
-
-  for (let i = 0; i < key.length; i++) {
-    seed += key.charCodeAt(i) * (i + 1);
-  }
-
-  const word = words[seed % words.length];
-  const day = key.slice(-2);
-
-  return word + day;
-}
   
 async function loadSettings(){
   try{
