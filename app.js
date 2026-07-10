@@ -192,3 +192,39 @@ function submitLeagueSignup(){
     status.textContent = "Something went wrong. Please try again.";
   });
 }
+(function startTicker() {
+  const track = document.querySelector(".ticker-track");
+  const firstGroup = document.querySelector(".ticker-group");
+
+  if (!track || !firstGroup) return;
+
+  let position = 0;
+  let groupWidth = 0;
+  let lastTime = performance.now();
+
+  function measureTicker() {
+    groupWidth = firstGroup.getBoundingClientRect().width;
+  }
+
+  function moveTicker(currentTime) {
+    const elapsed = Math.min((currentTime - lastTime) / 1000, 0.05);
+    lastTime = currentTime;
+
+    position -= 18 * elapsed;
+
+    if (groupWidth && position <= -groupWidth) {
+      position += groupWidth;
+    }
+
+    track.style.transform = `translate3d(${position}px, 0, 0)`;
+
+    requestAnimationFrame(moveTicker);
+  }
+
+  window.addEventListener("resize", measureTicker);
+
+  requestAnimationFrame(() => {
+    measureTicker();
+    requestAnimationFrame(moveTicker);
+  });
+})();
