@@ -91,7 +91,7 @@ button {
   min-width:max-content;
   height:34px;
   padding-left:100%;
-  animation:tickerMove 35s linear infinite;
+  animation:tickerMove 180s linear infinite;
   will-change:transform;
   -webkit-backface-visibility:hidden;
   backface-visibility:hidden;
