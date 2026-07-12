@@ -90,6 +90,7 @@ button {
   will-change:transform;
   -webkit-backface-visibility:hidden;
   backface-visibility:hidden;
+  animation:tickerScroll 28s linear infinite;
 }
 
 .ticker-group{
