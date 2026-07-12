@@ -1040,13 +1040,27 @@ button {
     top:0;
     width:56%;
     height:100%;
-    padding:16px;
+    padding:22px 16px 26px;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-end;
     z-index:2;
 }
+.live-info{
+    margin-top:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
 
+.live-info div{
+    font-size:16px;
+    line-height:1.25;
+}
+
+.live-btn{
+    margin-top:18px;
+}
   
 .live-overlay h2{
   margin:0;
