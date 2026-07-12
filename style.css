@@ -122,6 +122,15 @@ button {
   background:rgba(255,255,255,.28);
 }
 
+@keyframes tickerScroll{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+}
 .app-shell {
   width: min(520px, 100%);
   margin: 0 auto;
