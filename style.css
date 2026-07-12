@@ -1035,17 +1035,16 @@ button {
 }
 
 .live-overlay{
-    position:absolute;
-    left:0;
-    top:0;
-    width:58%;
-    height:100%;
-    padding:0 18px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    transform:translateY(22px);
-    z-index:2;
+  position:absolute;
+  left:0;
+  top:0;
+  width:58%;
+  height:100%;
+  padding:85px 16px 18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  z-index:2;
 }
 .live-info{
   margin-top:12px;
@@ -1591,11 +1590,4 @@ button {
       -webkit-transform:translate3d(-50%,0,0);
     }
   }
-}
-/* FINAL LIVE CARD POSITION */
-.live-overlay{
-  top:0 !important;
-  height:100% !important;
-  justify-content:center !important;
-  transform:translateY(45px) !important;
 }
