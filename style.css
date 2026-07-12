@@ -1526,3 +1526,44 @@ button {
     height:52px;
   }
 }
+/* IPHONE TICKER FIX */
+@supports (-webkit-touch-callout: none) {
+
+  .ticker-track{
+    display:inline-flex;
+    width:max-content;
+    min-width:max-content;
+    animation:tickerScrollIOS 38s linear infinite;
+    -webkit-animation:tickerScrollIOS 38s linear infinite;
+    transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0);
+  }
+
+  .ticker-group{
+    display:inline-flex;
+    flex:0 0 auto;
+    width:max-content;
+    min-width:max-content;
+    white-space:nowrap;
+  }
+
+  @keyframes tickerScrollIOS{
+    from{
+      transform:translate3d(0,0,0);
+    }
+
+    to{
+      transform:translate3d(-50%,0,0);
+    }
+  }
+
+  @-webkit-keyframes tickerScrollIOS{
+    from{
+      -webkit-transform:translate3d(0,0,0);
+    }
+
+    to{
+      -webkit-transform:translate3d(-50%,0,0);
+    }
+  }
+}
