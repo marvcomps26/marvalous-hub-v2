@@ -1591,3 +1591,20 @@ button {
     }
   }
 }
+/* FORCE LIVE TEXT TO BOTTOM LEFT */
+.live-overlay{
+  position:absolute !important;
+  top:auto !important;
+  right:auto !important;
+  bottom:18px !important;
+  left:18px !important;
+
+  width:48% !important;
+  height:auto !important;
+  padding:0 !important;
+
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:flex-end !important;
+  align-items:flex-start !important;
+}
