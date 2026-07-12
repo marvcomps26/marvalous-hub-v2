@@ -1592,3 +1592,11 @@ button {
     }
   }
 }
+
+/* FINAL LIVE CARD POSITION */
+.live-overlay{
+  top:38px !important;
+  height:calc(100% - 38px) !important;
+  transform:none !important;
+  justify-content:center !important;
+}
