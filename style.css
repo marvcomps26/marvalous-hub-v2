@@ -1033,19 +1033,19 @@ button {
 .live-bg{
   display:none;
 }
-
 .live-overlay{
   position:absolute;
-  left:0;
-  top:0;
-  width:58%;
-  height:100%;
-  padding:98px 16px 18px;
+  left:18px;
+  bottom:18px;
+  width:42%;
+  height:auto;
+  padding:0;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:flex-end;
   z-index:2;
 }
+  
 .live-info{
   margin-top:10px;
   display:flex;
@@ -1150,7 +1150,7 @@ button {
   width:8px;
   height:8px;
   border-radius:50%;
-  background:ffd35a;
+  background:#ffd35a;
   animation:livePulse 1s infinite;
 }
 
