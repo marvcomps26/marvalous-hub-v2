@@ -1592,11 +1592,10 @@ button {
     }
   }
 }
-
 /* FINAL LIVE CARD POSITION */
 .live-overlay{
-  top:38px !important;
-  height:calc(100% - 38px) !important;
-  transform:none !important;
+  top:0 !important;
+  height:100% !important;
   justify-content:center !important;
+  transform:translateY(45px) !important;
 }
