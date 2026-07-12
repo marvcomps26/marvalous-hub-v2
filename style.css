@@ -1040,17 +1040,17 @@ button {
   top:0;
   width:58%;
   height:100%;
-  padding:85px 16px 18px;
+  padding:98px 16px 18px;
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
   z-index:2;
 }
 .live-info{
-  margin-top:12px;
+  margin-top:10px;
   display:flex;
   flex-direction:column;
-  gap:8px;
+  gap:6px;
 }
 
 .live-info div{
@@ -1118,16 +1118,16 @@ button {
   text-transform:uppercase;
 }
 .live-btn{
-    margin-top:18px;
-    width:140px;
-    height:42px;
+    margin-top:16px;
+    width:128px;
+    height:39px;
     border-radius:999px;
     display:flex;
     align-items:center;
     justify-content:center;
     gap:8px;
     text-decoration:none;
-    font-size:13px;
+    font-size:12px;
     font-weight:900;
     color:#fff;
 
