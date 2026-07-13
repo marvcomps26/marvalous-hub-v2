@@ -838,7 +838,7 @@ button {
   
 @keyframes compScroll{
   from{transform:translateX(0);}
-  to{transform:translateX(-2338px);}
+  to{transform:translateX(-2112px);}
 }    
 
 /* DAILY CODE POPUP */
