@@ -1616,27 +1616,3 @@ button {
   position:relative;
   overflow:visible;
 }
-.install-card{
-  position:relative;
-  overflow:visible;
-}
-
-#hiddenMarv{
-  position:absolute;
-  top:-62px;
-  left:38px;
-  width:125px;
-  z-index:30;
-  cursor:pointer;
-}
-
-#hiddenMarv img{
-  display:block;
-  width:100%;
-  height:auto;
-  filter:drop-shadow(0 0 10px rgba(141,40,255,.9));
-}
-
-#hiddenMarv:active{
-  transform:scale(.94);
-}
