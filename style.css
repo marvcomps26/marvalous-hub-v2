@@ -1608,27 +1608,28 @@ button {
   justify-content:flex-end !important;
   align-items:flex-start !important;
 }
-#hiddenMarv{
+.social-card{
   position:relative;
-  width:100%;
-  height:0;
-  z-index:50;
+  overflow:visible;
+}
+
+#hiddenMarv{
+  position:absolute;
+  top:-48px;
+  right:28px;
+  width:105px;
+  height:70px;
+  z-index:20;
+  cursor:pointer;
 }
 
 #hiddenMarv img{
-  position:absolute;
-  right:20px;
-  top:-68px;      /* makes him peek over the Stay Connected box */
-  width:150px;    /* bigger */
-  cursor:pointer;
-  transition:transform .2s ease;
-  filter:drop-shadow(0 0 14px rgba(141,40,255,.85));
+  width:100%;
+  height:auto;
+  display:block;
+  filter:drop-shadow(0 0 10px rgba(141,40,255,.9));
 }
 
-#hiddenMarv img:hover{
-  transform:translateY(-4px);
-}
-
-#hiddenMarv img:active{
+#hiddenMarv:active{
   transform:scale(.95);
 }
