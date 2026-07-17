@@ -1620,9 +1620,9 @@ button {
 
 #hiddenMarv img{
   position:absolute;
-  width:82px;
-  right:26px;
-  bottom:-4px;
+  width:55px;
+  right:18px;
+  top:-22px;
   display:block;
   filter:drop-shadow(0 0 8px rgba(141,40,255,.8));
   transition:transform .2s ease;
