@@ -844,7 +844,9 @@ function showResult(){
       currentPrize.prize.includes("ADD £1") ||
       currentPrize.prize.includes("ADD £5") ||
       currentPrize.prize.includes("ADD £10");
-
+const isWednesdayTicket =
+  currentPrize.prize.toUpperCase().includes("WEDNESDAY") &&
+  currentPrize.prize.toUpperCase().includes("TICKET");
     resultSmall.innerHTML = hasCode ? `
 
 <div style="margin:12px 0;padding:14px;border-radius:16px;background:rgba(101,207,255,.12);border:1px solid rgba(191,243,255,.35);">
@@ -856,6 +858,22 @@ function showResult(){
 Use this code within 24 hours 💜<br><br>
 
 ${currentPrize.minSpend && currentPrize.minSpend != "0" ? `Minimum spend £${currentPrize.minSpend}<br><br>` : ""}
+
+<input id="claimName" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<input id="claimEmail" type="email" placeholder="Your email" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
+<button id="claimBtn" onclick="submitClaim()">Claim Prize</button>
+
+` : isWednesdayTicket ? `
+
+🎉 Congratulations! 🎉<br><br>
+
+You've won:<br><br>
+
+<strong>${currentPrize.prize}</strong><br><br>
+
+Enter your details below to claim your prize.<br><br>
+
+We'll call your name out during Wednesday's live draw and you'll get a FREE go on that night's live game! 💜<br><br>
 
 <input id="claimName" placeholder="Your name" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
 <input id="claimEmail" type="email" placeholder="Your email" style="width:100%;padding:12px;margin-bottom:10px;border-radius:12px;border:none;">
@@ -957,10 +975,24 @@ function submitClaim(){
     if(currentPrize.prize === "TRY AGAIN"){
       resultSmall.textContent = "Your league points claim has been logged successfully 💜";
     } else {
-      resultSmall.textContent = currentPrize.code
-        ? "Your win has been logged successfully 💜 Your discount code is ready to use."
-        : "Your claim has been logged successfully 💜 We'll check and apply your bonus shortly.";
+
+  const isWednesdayTicket =
+    currentPrize.prize.toUpperCase().includes("WEDNESDAY") &&
+    currentPrize.prize.toUpperCase().includes("TICKET");
+
+  if (currentPrize.code) {
+    resultSmall.textContent =
+      "Your win has been logged successfully 💜 Your discount code is ready to use.";
+  } else if (isWednesdayTicket) {
+    resultSmall.textContent =
+      "Your claim has been received 💜 If your claim is valid, we'll call your name during Wednesday's live draw for a FREE go on that night's live game.";
+  } else {
+    resultSmall.textContent =
+      "Your claim has been logged successfully 💜 We'll check and apply your reward shortly.";
+  }
+
     }
+    
 
     document.getElementById("doneBtn").style.display = "inline-block";
     document.getElementById("doneBtn").textContent = "Done";
