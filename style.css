@@ -1620,23 +1620,21 @@ button {
   position:relative;
   overflow:visible;
 }
-
 #hiddenMarv{
-  position:absolute;
-  top:-55px;
-  left:38px;
-  width:120px;
-  height:auto;
-  z-index:50;
-  cursor:pointer;
+    position:absolute;
+    bottom:15px;
+    left:12px;
+    width:90px;
+    z-index:50;
+    cursor:pointer;
 }
 
 #hiddenMarv img{
-  display:block;
-  width:100%;
-  height:auto;
-  filter:drop-shadow(0 0 10px rgba(141,40,255,.9));
+    width:100%;
+    display:block;
+    filter:drop-shadow(0 0 10px rgba(141,40,255,.9));
 }
+
 
 #hiddenMarv:active{
   transform:scale(.94);
