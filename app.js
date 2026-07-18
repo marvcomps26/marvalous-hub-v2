@@ -228,3 +228,10 @@ function submitLeagueSignup(){
     requestAnimationFrame(moveTicker);
   });
 })();
+function foundMarv(){
+    document.getElementById("marvPopup").classList.add("show");
+}
+
+function closeMarvPopup(){
+    document.getElementById("marvPopup").classList.remove("show");
+}
