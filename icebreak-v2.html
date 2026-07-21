@@ -540,6 +540,25 @@ button{
 .screen-flash.active{
   animation:blueFlash .35s ease-out;
 }
+
+.daily-code-box{
+  margin:12px 0;
+  padding:16px;
+  border-radius:18px;
+  text-align:center;
+  background:linear-gradient(135deg,#2a0b52,#47107d);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 0 18px rgba(141,40,255,.35);
+}
+
+.daily-code-box span{
+  font-size:34px;
+  font-weight:1000;
+  letter-spacing:4px;
+  color:#ffd76a;
+  text-transform:uppercase;
+  text-shadow:0 0 18px rgba(255,215,106,.6);
+}
   
 </style>
 </head>
@@ -557,8 +576,15 @@ button{
   </section>
 
   <section class="code-card glass">
-    <div class="code-title">Enter Today’s Code</div>
-    <div class="code-sub">Get today’s code from the Marvalous App homepage.</div>
+    <div class="code-title">Today's Daily Code</div>
+
+<div class="daily-code-box">
+  <span id="dailyCodeDisplay">Loading...</span>
+</div>
+
+<div class="code-sub">
+  Enter the code below to unlock today's Ice Break.
+</div>
     <div class="row">
       <input id="codeInput" placeholder="Enter daily code">
       <button onclick="unlockGame()">Unlock</button>
@@ -707,7 +733,7 @@ async function loadSettings(){
 
     const settingsRow = csvSplit(lines[0]);
 DAILY_CODE = (settingsRow[1] || "").trim().toUpperCase();
-
+document.getElementById("dailyCodeDisplay").textContent = DAILY_CODE;
 PRIZES = [];
 
     for(let i=4; i<lines.length; i++){
